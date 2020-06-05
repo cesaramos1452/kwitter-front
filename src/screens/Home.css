@@ -1,0 +1,9 @@
+.welcomeMessage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: stretch;
+  padding: 0 1em;
+  margin: 2em;
+  color: #7D4CDB;
+}
