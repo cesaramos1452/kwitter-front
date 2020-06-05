@@ -1,0 +1,6 @@
+GET http://kwitter-api.herokuapp.com/users/vinchinzo123
+
+
+###
+
+POST http://kwitter-api.herokuapp.com/users/vinchinzo123
