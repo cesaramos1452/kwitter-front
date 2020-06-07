@@ -13,7 +13,6 @@ export const ProfileScreen = (props) => {
     <Grommet theme={grommet}>
       <MenuContainer />
       <Main margin="medium" pad="small">
-        <h2>Profile</h2>
       </Main>
       <UserProfile username={username} />
     </Grommet>
