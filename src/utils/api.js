@@ -57,6 +57,8 @@ class API {
       return err;
     }
   }
+
+  async createUser() {}
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
