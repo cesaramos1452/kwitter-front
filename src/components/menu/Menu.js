@@ -45,10 +45,27 @@ export const Menu = ({ isAuthenticated, logout }) => {
 
             {isAuthenticated && (
               <div id="menu-links">
-                <Anchor Link to="#" icon={<Home />} alt="home"/>
-                <Anchor Link to="#" icon={<User />}/>
-                <Anchor Link to="/messagefeed" icon={<ChatOption />}/>
+                <Anchor Link to="/" icon={<Home />} alt="home"/>
+                <Anchor Link to="/profiles/:username" icon={<User />}/>
+                <Anchor Link to="/messages" icon={<ChatOption />}/>
                 <Anchor Link to="/" icon={<Logout />} onClick={logout}/>
+
+                <Link to="/" onClick={logout}>
+                  Logout
+                </Link>
+                <Link to="/">Home</Link>
+                
+                
+                <Anchor icon={<ChatOption />}
+                  label='Messages'
+                  animateIcon={false}
+                  href="/profiles/:username/messages" 
+                />
+                <Link to="/profiles/:username">Profile</Link>
+                <Link to='/profiles/:username/messages'>
+                  <Anchor  icon={<ChatOption />}tag="span">Simpler Messages</Anchor>
+                </Link>
+                
               </div>
             )}
           </Box>

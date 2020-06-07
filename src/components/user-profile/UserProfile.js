@@ -32,7 +32,7 @@ export const UserProfile = (props) => {
             />
           </div>
           <div>
-            {bio !== undefined && bio.user.displayName}
+            <p>{bio.user.displayName}</p>
             <h3>{bio.user.username}</h3>
             <p>About: {bio.user.about}</p>
             <p>Last Update: {bio.user.updatedAt}</p>
