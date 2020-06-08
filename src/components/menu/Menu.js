@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Logo from "../images/logo.png"
 import "./Menu.css";
 
-import { User, ChatOption, Logout} from 'grommet-icons';
+import { Article, User, ChatOption, Logout} from 'grommet-icons';
 
 import { Anchor, Box, Grommet, Header } from "grommet";
 import { grommet } from "grommet/themes";
@@ -50,7 +50,7 @@ export const Menu = ({ isAuthenticated, logout, props }) => {
             />
             
 
-            <h1>Kwitter</h1>
+            <h1>Candy</h1>
 
             <Box direction="row" gap="medium">
 
@@ -58,7 +58,9 @@ export const Menu = ({ isAuthenticated, logout, props }) => {
               <div id="menu-links">
 
                 {/* temporarily hard coding the links */}
-
+                <Link to={`/profiles/vinchinzo123/newsfeed`}>
+                  <Anchor icon={<Article />} />
+                </Link>
                 <Link to={`/profiles/vinchinzo123`}>
                   <Anchor icon={<User />} />
                 </Link>
