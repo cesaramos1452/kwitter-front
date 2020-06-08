@@ -1,6 +1,7 @@
 import React from "react";
 import ProptTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Logo from "../images/logo.png"
 import "./Menu.css";
 
 import { User, Home, ChatOption, Logout} from 'grommet-icons';
@@ -10,10 +11,11 @@ import { grommet } from "grommet/themes";
 
 export const Avatar = ({ ...rest }) => (
   <Box
-    height="xxsmall"
-    width="xxsmall"
+    height="xsmall"
+    width="xsmall"
+    // src={Logo}
     round="full"
-    background="url(//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80)"
+    background="url({Logo})"
     {...rest}
   />
 );
@@ -30,9 +32,12 @@ export const Menu = ({ isAuthenticated, logout }) => {
           pad="medium"
           alignSelf="stretch"
         >
-            {isAuthenticated && (
-                <Avatar />
-              )}
+            <img 
+              className="logo"
+              src={Logo}
+              alt="logo"
+            />
+            
 
             <h1>Kwitter</h1>
 
@@ -40,10 +45,27 @@ export const Menu = ({ isAuthenticated, logout }) => {
 
             {isAuthenticated && (
               <div id="menu-links">
-                <Anchor Link to="#" icon={<Home />} alt="home"/>
-                <Anchor Link to="#" icon={<User />}/>
-                <Anchor Link to="/messagefeed" icon={<ChatOption />}/>
+                <Anchor Link to="/" icon={<Home />} alt="home"/>
+                <Anchor Link to="/profiles/:username" icon={<User />}/>
+                <Anchor Link to="/messages" icon={<ChatOption />}/>
                 <Anchor Link to="/" icon={<Logout />} onClick={logout}/>
+
+                <Link to="/" onClick={logout}>
+                  Logout
+                </Link>
+                <Link to="/">Home</Link>
+                
+                
+                <Anchor icon={<ChatOption />}
+                  label='Messages'
+                  animateIcon={false}
+                  href="/profiles/:username/messages" 
+                />
+                <Link to="/profiles/:username">Profile</Link>
+                <Link to='/profiles/:username/messages'>
+                  <Anchor  icon={<ChatOption />}tag="span">Simpler Messages</Anchor>
+                </Link>
+                
               </div>
             )}
           </Box>

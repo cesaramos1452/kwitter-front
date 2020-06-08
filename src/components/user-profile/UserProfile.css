@@ -1,0 +1,14 @@
+.ProfileImg {
+    height: 17em;
+    width: 17em;
+    border-radius: 25%;
+    padding: 0em 3em 1em;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
