@@ -4,7 +4,7 @@ import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "../actions";
 const INITIAL_STATE = {
   isAuthenticated: false,
   username: "",
-  loading: true,
+  loading: false,
   error: "",
 };
 
