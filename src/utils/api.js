@@ -41,15 +41,15 @@ class API {
 
 
 
-  async createUser({ user }) {
-    try {
-      const result = await this.axiosInstance.post("/users", user);
-      return result;
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async createUser({ user }) {
+  //   try {
+  //     const result = await this.axiosInstance.post("/users", user);
+  //     return result;
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
   async login({ username, password }) {
     try {
@@ -77,81 +77,81 @@ class API {
   ////////////////    get a user template
   
 
-  async getUser(user) {
-    try {
-      await this.axiosInstance.get(`/users/${username}`, user);
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async getUser(user) {
+  //   try {
+  //     await this.axiosInstance.get(`/users/${username}`, user);
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
   ////////////////   update a user template
 
-  async updateUser(user) {
-    try {
-      await this.axiosInstance.patch(`/users/${username}`, user);
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async updateUser(user) {
+  //   try {
+  //     await this.axiosInstance.patch(`/users/${username}`, user);
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
 ////////////////   Create a message template
 
-  async createMessage({ messageId }) {
-    try {
-      const result = await this.axiosInstance.post("/messages", messageId);
-      return result;
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async createMessage({ messageId }) {
+  //   try {
+  //     const result = await this.axiosInstance.post("/messages", messageId);
+  //     return result;
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
   ////////////////   get a message template
 
-  async getMessage(messageId) {
-    try {
-      await this.axiosInstance.get(`/messages/${messageId}`, messageId);
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async getMessage(messageId) {
+  //   try {
+  //     await this.axiosInstance.get(`/messages/${messageId}`, messageId);
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
   ////////////////   delete a message template
 
-  async deleteMessage(messageId) {
-    try {
-      await this.axiosInstance.delete(`/messages/${messageId}`, messageId);
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async deleteMessage(messageId) {
+  //   try {
+  //     await this.axiosInstance.delete(`/messages/${messageId}`, messageId);
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
   ////////////////   add a like template
 
-  async addLike(likeId) {
-    try {
-      await this.axiosInstance.post("/likes", likeId);
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async addLike(likeId) {
+  //   try {
+  //     await this.axiosInstance.post("/likes", likeId);
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
 ////////////////   remove a like template
 
-  async removeLike() {
-    try {
-      await this.axiosInstance.delete(`/likes/${likeId}`, likeId);
-    } catch (err) {
-      helpMeInstructor(err);
-      return err;
-    }
-  }
+  // async removeLike() {
+  //   try {
+  //     await this.axiosInstance.delete(`/likes/${likeId}`, likeId);
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     return err;
+  //   }
+  // }
 
 }
 
