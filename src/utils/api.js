@@ -35,9 +35,7 @@ class API {
     this.axiosInstance = axiosInstance;
   }
 
-
-
-////////////////   Create a new user template
+  ////////////////   Create a new user template
 
 
 
@@ -73,6 +71,8 @@ class API {
       return err;
     }
   }
+
+  async createUser() {}
 
   ////////////////    get a user template
   
@@ -152,7 +152,6 @@ class API {
   //     return err;
   //   }
   // }
-
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
