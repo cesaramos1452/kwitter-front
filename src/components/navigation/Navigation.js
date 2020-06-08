@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
-import { HomeScreen, ProfileScreen, MessagesScreen, NotFoundScreen } from "../../screens";
+import { NewsScreen, ProfileScreen, MessagesScreen, NotFoundScreen, HomeScreen } from "../../screens";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
 export const Navigation = () => (
   <BrowserRouter>
     <Switch>
       <ConnectedRoute
-        exact
-        path="/"
-        redirectIfAuthenticated
-        component={HomeScreen}
+        isProtected
+        path="/profiles/:username/newsfeed"
+        component={NewsScreen}
       />
       <ConnectedRoute
         exact
@@ -22,6 +21,12 @@ export const Navigation = () => (
         isProtected
         path="/profiles/:username/messages"
         component={MessagesScreen}
+      />
+      <ConnectedRoute
+        exact
+        path="/"
+        redirectIfAuthenticated
+        component={HomeScreen}
       />
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>

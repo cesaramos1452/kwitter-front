@@ -1,3 +1,9 @@
+In all areas where grommet component is imported the css from v2.grommet.io
+was used. Areas where there is a style sheet and styling on that sheet was
+our own work.
+
+
+
 ## Overview
 
 You will be working in teams to make a clone of a common micro-blogging platform. You will be given a back-end API for you to form your front-end application around.
