@@ -5,5 +5,9 @@
   justify-content: stretch;
   padding: 0 1em;
   margin: 2em;
-  color: #7D4CDB;
+  color: #735f9c;
+}
+
+.welcomeTagline {
+  padding: 1em;
 }
