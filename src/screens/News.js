@@ -1,8 +1,8 @@
 import React from "react";
 import { MenuContainer } from "../components";
 
-import { Edit } from 'grommet-icons';
 import { Grommet, Main, Anchor } from "grommet";
+// import Search from 'grommet/components/Search';
 import { grommet } from "grommet/themes";
 
 export const NewsScreen = (props) => {
@@ -14,10 +14,15 @@ export const NewsScreen = (props) => {
       <MenuContainer />
       <Main margin="medium" pad="small">
           <h3>News Feed</h3>
-          <Anchor 
+          {/* <Search placeHolder='Search'
+            inline={true}
+            value=''
+            // onDOMChange={...}
+          /> */}
+          {/* <Anchor 
           icon={<Edit />} 
-        //   onClick={}
-          />
+           onClick={}
+          /> */}
       </Main>
     </Grommet>
   );

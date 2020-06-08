@@ -46,7 +46,10 @@ export const LoginForm = ({ login, loading, error }) => {
         <Box 
           align="center"
         >
+          {loading && <Loader />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
           <Form
+            className="loginForm"
             id="login-form" 
             onSubmit={handleLogin}
           >
@@ -98,8 +101,7 @@ export const LoginForm = ({ login, loading, error }) => {
           </Form>
         </Box>
       </Box>
-      {loading && <Loader />}
-      {error && <p style={{ color: "red" }}>{error.message}</p>}
+      
 
     </Grommet>
   );
