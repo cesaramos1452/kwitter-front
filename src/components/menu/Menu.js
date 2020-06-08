@@ -1,10 +1,11 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import ProptTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Logo from "../images/logo.png"
 import "./Menu.css";
 
-import { User, Home, ChatOption, Logout} from 'grommet-icons';
+import { User, ChatOption, Logout} from 'grommet-icons';
 
 import { Anchor, Box, Grommet, Header } from "grommet";
 import { grommet } from "grommet/themes";
@@ -20,7 +21,17 @@ export const Avatar = ({ ...rest }) => (
   />
 );
 
-export const Menu = ({ isAuthenticated, logout }) => {
+export const Menu = ({ isAuthenticated, logout, props }) => {
+
+  // const [bio, setbio] = useState(undefined);
+
+  // useEffect(() => {
+  //   fetch(`http://kwitter-api.herokuapp.com/users/${props.username}`)
+  //     .then((res) => res.json())
+  //     .then((user) => setbio(user));
+  // }, [props.username]);
+  
+
   return (
     <div id="menu">
       <Grommet theme={grommet}>
@@ -45,27 +56,18 @@ export const Menu = ({ isAuthenticated, logout }) => {
 
             {isAuthenticated && (
               <div id="menu-links">
-                <Anchor Link to="/" icon={<Home />} alt="home"/>
-                <Anchor Link to="/profiles/:username" icon={<User />}/>
-                <Anchor Link to="/messages" icon={<ChatOption />}/>
-                <Anchor Link to="/" icon={<Logout />} onClick={logout}/>
 
-                <Link to="/" onClick={logout}>
-                  Logout
+                {/* temporarily hard coding the links */}
+
+                <Link to={`/profiles/vinchinzo123`}>
+                  <Anchor icon={<User />} />
                 </Link>
-                <Link to="/">Home</Link>
-                
-                
-                <Anchor icon={<ChatOption />}
-                  label='Messages'
-                  animateIcon={false}
-                  href="/profiles/:username/messages" 
-                />
-                <Link to="/profiles/:username">Profile</Link>
-                <Link to='/profiles/:username/messages'>
-                  <Anchor  icon={<ChatOption />}tag="span">Simpler Messages</Anchor>
+                <Link to={`/profiles/vinchinzo123/messages`}>
+                  <Anchor icon={<ChatOption />} />
                 </Link>
-                
+                <Link to={`/`} onClick={logout}>
+                  <Anchor icon={<Logout />} onClick={logout} />
+                </Link>
               </div>
             )}
           </Box>
