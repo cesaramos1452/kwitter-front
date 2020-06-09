@@ -86,6 +86,17 @@ class API {
     }
   }
 
+  ////////////////   update a get user list template
+  async getUsersList() {
+    console.log({ username });
+    try {
+      const result = await this.axiosInstance.get(`/users`);
+      console.log(result);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
   ////////////////   update a user template
 
   async updateUser(user) {
