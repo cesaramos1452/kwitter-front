@@ -47,7 +47,6 @@ class API {
     }
   }
 
-
   async login({ username, password }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
