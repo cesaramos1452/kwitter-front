@@ -18,26 +18,10 @@ export const getUser = (userName) => async (dispatch, getState) => {
   try {
     const payload = await api.getUser(userName);
     // ℹ️ℹ️This is how you would debug the response to a requestℹ️ℹ️
-    // console.log({ result })
+    // console.log({ result });
+    // return { type: GET_USER, payload };
     dispatch({ type: GET_USER, payload });
   } catch (err) {
-    dispatch({
-      type: LOGIN_FAILURE,
-      payload: err.message,
-    });
+    console.log(err);
   }
 };
-
-export const logout = () => async (dispatch, getState) => {
-  try {
-    // We do not care about the result of logging out
-    // as long as it succeeds
-    await api.logout();
-  } finally {
-    /**
-     * Let the reducer know that we are logged out
-     */
-    dispatch({ type: LOGOUT });
-  }
-};
-// END AUTH ACTIONS

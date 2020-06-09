@@ -10,25 +10,30 @@ import {
 } from "../actions";
 
 const INITIAL_STATE = {
-  userList = [],
+  userList: [],
   isAuthenticated: false,
-  password: "",
   username: "",
   displayName: "",
   about: "",
-  userPicture: "",
   createdAt: "",
   updatedAt: "",
-  pictureLoaction: "",
-  googleId: ""
+  pictureLocation: null,
+  googleId: null,
 };
 
 export const usersReducer = (state = INITIAL_STATE, action) => {
+  console.log("this is the action", { action });
   switch (action.type) {
     case GET_USER:
-      console.log(action)
-      console.log(action.payload)
-      const {username, displayName, about, createdAt, updatedAt, pictureLoaction, googleId} = action.payload
+      const {
+        username,
+        displayName,
+        about,
+        createdAt,
+        updatedAt,
+        pictureLocation,
+        googleId,
+      } = action.payload.user;
       return {
         ...INITIAL_STATE,
         username,
@@ -36,10 +41,10 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         about,
         createdAt,
         updatedAt,
-        pictureLoaction,
-        googleId
+        pictureLocation,
+        googleId,
       };
-      default:
-        return state;
+    default:
+      return state;
   }
-}
+};

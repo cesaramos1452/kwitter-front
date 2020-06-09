@@ -75,8 +75,11 @@ class API {
   ////////////////    get a user template
 
   async getUser(username) {
+    console.log({ username });
     try {
-      await this.axiosInstance.get(`/users/${username}`);
+      const result = await this.axiosInstance.get(`/users/${username}`);
+      console.log(result);
+      return result;
     } catch (err) {
       helpMeInstructor(err);
       return err;
