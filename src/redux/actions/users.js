@@ -1,23 +1,25 @@
 import api from "../../utils/api";
 
-// AUTH CONSTANTS
-export const LOGIN = "AUTH/LOGIN";
-export const LOGIN_SUCCESS = "AUTH/LOGIN_SUCCESS";
-export const LOGIN_FAILURE = "AUTH/LOGIN_FAILURE";
-export const LOGOUT = "AUTH/LOGOUT";
+// USER CONSTANTS
+export const GET_USER_LIST = "USERS/GET_USER_LIST";
+export const CREATE_NEW_USER = "USERS/CREATE_NEW_USER";
+export const GET_USER = "USERS/GET_USER";
+export const UPDATE_USER = "USERS/UPDATE_USER"; // needs token
+export const DELETE_USER = "USERS/DELETE_USER"; //needs token
+export const GET_USER_PICTURE = "USERS/GET_USER_PICTURE";
+export const PUT_USER_PICTURE = "USERS/PUT_USER_PICTURE"; //needs token
 
 /*
- AUTH ACTIONS (this is a thunk....)
+ USER ACTIONS (this is a thunk....)
  THUNKS: --> https://github.com/reduxjs/redux-thunk#whats-a-thunk
  If you need access to your store you may call getState()
 */
-export const login = (credentials) => async (dispatch, getState) => {
+export const getUser = (userName) => async (dispatch, getState) => {
   try {
-    dispatch({ type: LOGIN });
-    const payload = await api.login(credentials);
+    const payload = await api.getUser(userName);
     // ℹ️ℹ️This is how you would debug the response to a requestℹ️ℹ️
     // console.log({ result })
-    dispatch({ type: LOGIN_SUCCESS, payload });
+    dispatch({ type: GET_USER, payload });
   } catch (err) {
     dispatch({
       type: LOGIN_FAILURE,
