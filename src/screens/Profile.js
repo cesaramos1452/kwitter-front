@@ -8,14 +8,17 @@ import { grommet } from "grommet/themes";
 export const ProfileScreen = (props) => {
   console.log(props);
   const { username } = props.match.params;
+  const { displayName } = props.match.params;
   console.log(username);
   return (
     <Grommet theme={grommet}>
-      <MenuContainer />
+      <MenuContainer 
+        username={username}
+        displayName={displayName}
+      />
       <Main margin="medium" pad="small">
-        <h2>Profile</h2>
-      </Main>
       <UserProfile username={username} />
+      </Main>
     </Grommet>
   );
 };

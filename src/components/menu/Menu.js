@@ -1,24 +1,37 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import ProptTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Logo from "../images/logo.png"
 import "./Menu.css";
 
-import { User, Home, ChatOption, Logout} from 'grommet-icons';
+import { Article, User, ChatOption, Logout} from 'grommet-icons';
 
 import { Anchor, Box, Grommet, Header } from "grommet";
 import { grommet } from "grommet/themes";
 
 export const Avatar = ({ ...rest }) => (
   <Box
-    height="xxsmall"
-    width="xxsmall"
+    height="xsmall"
+    width="xsmall"
+    // src={Logo}
     round="full"
-    background="url(//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80)"
+    background="url({Logo})"
     {...rest}
   />
 );
 
-export const Menu = ({ isAuthenticated, logout }) => {
+export const Menu = ({ isAuthenticated, logout, props }) => {
+
+  // const [bio, setbio] = useState(undefined);
+
+  // useEffect(() => {
+  //   fetch(`http://kwitter-api.herokuapp.com/users/${props.username}`)
+  //     .then((res) => res.json())
+  //     .then((user) => setbio(user));
+  // }, [props.username]);
+  
+
   return (
     <div id="menu">
       <Grommet theme={grommet}>
@@ -30,20 +43,33 @@ export const Menu = ({ isAuthenticated, logout }) => {
           pad="medium"
           alignSelf="stretch"
         >
-            {isAuthenticated && (
-                <Avatar />
-              )}
+            <img 
+              className="logo"
+              src={Logo}
+              alt="logo"
+            />
+            
 
-            <h1>Kwitter</h1>
+            <h1>Candy</h1>
 
             <Box direction="row" gap="medium">
 
             {isAuthenticated && (
               <div id="menu-links">
-                <Anchor Link to="#" icon={<Home />} alt="home"/>
-                <Anchor Link to="#" icon={<User />}/>
-                <Anchor Link to="/messagefeed" icon={<ChatOption />}/>
-                <Anchor Link to="/" icon={<Logout />} onClick={logout}/>
+
+                {/* temporarily hard coding the links */}
+                <Link to={`/profiles/vinchinzo123/newsfeed`}>
+                  <Anchor icon={<Article />} />
+                </Link>
+                <Link to={`/profiles/vinchinzo123`}>
+                  <Anchor icon={<User />} />
+                </Link>
+                <Link to={`/profiles/vinchinzo123/messages`}>
+                  <Anchor icon={<ChatOption />} />
+                </Link>
+                <Link to={`/`} onClick={logout}>
+                  <Anchor icon={<Logout />} onClick={logout} />
+                </Link>
               </div>
             )}
           </Box>

@@ -1,6 +1,47 @@
-GET http://kwitter-api.herokuapp.com/users/vinchinzo123
+GET http://kwitter-api.herokuapp.com/users/
+
 
 
 ###
 
-POST http://kwitter-api.herokuapp.com/users/vinchinzo123
+POST http://kwitter-api.herokuapp.com/users/
+content-type: application/json
+
+{
+    "username": "testing123plmmm",
+  "displayName": "string",
+  "password": "string"
+}
+###
+POST http://kwitter-api.herokuapp.com/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "vinchinzo123",
+  "password": "thisisapassword"
+}
+
+
+###
+
+itPATCH http://kwitter-api.herokuapp.com/users/vinchinzo123 HTTP/1.1
+content-type: application/json
+
+
+
+{
+  "password": "thisisapassword",
+  "about": "string",
+  "displayName": "Vince Newsom",
+}
+
+###
+POST http://kwitter-api.herokuapp.com/messages HTTP/1.1
+content-type: application/json
+
+{
+  "text": "Test"
+  } 
+
+### 
+GET http://kwitter-api.herokuapp.com/messages

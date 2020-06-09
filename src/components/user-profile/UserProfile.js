@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import BlankProfile from "./blank-profile.png";
+import BlankProfile from "../images/blank-profile.png";
 
 import { Grommet, Header, Main, Text, Button } from "grommet";
 import { grommet } from "grommet/themes";
@@ -25,16 +25,20 @@ export const UserProfile = (props) => {
   return (
     <Grommet theme={grommet}>
       <Main margin="medium" pad="small">
-        This is {bio !== undefined && bio.user.displayName}'s User Profile
-        {bio !== undefined && (
+     
+      {bio !== undefined && (
+          <div  className="userProfile">
           <div>
-            <h3>UserName: {bio.user.username}</h3>
             {/* <img src={bio.user.pictureLocation} alt="profile picture" /> */}
             <img
-              style={{ width: "200px", height: "200px" }}
+             className="ProfileImg"
               src={bio.user.pictureLocation || BlankProfile}
               alt="profile picture"
             />
+          </div>
+          <div>
+            <p>{bio.user.displayName}</p>
+            <h3>{bio.user.username}</h3>
             <p>About: {bio.user.about}</p>
             <p>Last Update: {bio.user.updatedAt}</p>
             <p>Created Profile: {bio.user.createdAt}</p>
@@ -43,8 +47,9 @@ export const UserProfile = (props) => {
             {/* Have input fields to update prefilled with from API call */}
             <button onClick={updateProfile}>Update Bio</button>
           </div>
-        )}
-      </Main>
+        </div>
+      )}
+       </Main>
     </Grommet>
   );
 };
