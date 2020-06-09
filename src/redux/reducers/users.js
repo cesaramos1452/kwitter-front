@@ -44,6 +44,10 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         pictureLocation,
         googleId,
       };
+    case UPDATE_USER:
+      return {
+        ...INITIAL_STATE,
+      };
     default:
       return state;
   }

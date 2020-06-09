@@ -88,14 +88,19 @@ class API {
 
   ////////////////   update a user template
 
-  // async updateUser(user) {
-  //   try {
-  //     await this.axiosInstance.patch(`/users/${username}`, user);
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async updateUser(user) {
+    try {
+      const result = await this.axiosInstance.patch(
+        `/users/${user.username}`,
+        user.requestBody
+      );
+      console.log(result);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 
   ////////////////   Create a message template
 
