@@ -34,3 +34,12 @@ export const updateUser = (user) => async (dispatch, getState) => {
     console.log(err);
   }
 };
+
+export const signup = (user) => async (dispatch, getState) => {
+  try {
+    const payload = await api.signup(user);
+    dispatch({ type: CREATE_NEW_USER, payload });
+  } catch (err) {
+    console.log(err);
+  }
+};

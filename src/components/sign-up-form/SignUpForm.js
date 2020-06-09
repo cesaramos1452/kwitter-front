@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import ProptTypes from "prop-types";
 import { Loader } from "../loader";
 import { Link } from "react-router-dom";
-import "./LoginForm.css";
+import "./SignUpForm.css";
 import { Hide, View } from "grommet-icons";
 import { grommet } from "grommet/themes";
-import { Box, Button, Grommet, Form, FormField, TextInput } from "grommet";
+import { Box, Button, Form, FormField, Grommet, TextInput } from "grommet";
 
-export const LoginForm = ({ login, loading, error }) => {
+export const SignUpForm = ({ signup, loading, error }) => {
   // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
     username: "",
+    displayName:"",
     password: "",
   });
 
   const [reveal, setReveal] = React.useState(false);
 
-  const handleLogin = (event) => {
+  const handleSignUp = (event) => {
     event.preventDefault();
-    login(state);
+    signup(state);
   };
 
   const handleChange = (event) => {
@@ -33,15 +34,27 @@ export const LoginForm = ({ login, loading, error }) => {
         <Box align="center">
           {loading && <Loader />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
-          <Form className="loginForm" id="login-form" onSubmit={handleLogin}>
+          <Form className="SignUpForm" id="signup-form" onSubmit={handleSignUp}>
             <FormField round="small" border>
               <TextInput
                 type="text"
+                label="test"
                 name="username"
                 autoFocus
                 value={state.username}
                 required
                 htmlFor="username"
+                onChange={handleChange}
+              />
+            </FormField>
+            <FormField round="small" border>
+            <TextInput
+                type="text"
+                name="displayName"
+                autoFocus
+                value={state.displayName}
+                required
+                htmlFor="displayName"
                 onChange={handleChange}
               />
             </FormField>
@@ -60,19 +73,14 @@ export const LoginForm = ({ login, loading, error }) => {
               />
             </Box>
             <Box direction="row" justify="between" margin={{ top: "medium" }}>
-              <Link to={`/signup`}>
+              <Link to={`/`}>
                 <Button
+                  type="submit"
                   label="Sign Up"
                   primary
                   disabled={loading}
                 />
               </Link>
-              <Button
-                type="submit"
-                label="Sign In"
-                primary
-                disabled={loading}
-              />
             </Box>
           </Form>
         </Box>
@@ -81,8 +89,8 @@ export const LoginForm = ({ login, loading, error }) => {
   );
 };
 
-LoginForm.propTypes = {
-  login: ProptTypes.func.isRequired,
+SignUpForm.propTypes = {
+  signup: ProptTypes.func.isRequired,
   loading: ProptTypes.bool,
   error: ProptTypes.string,
 };
