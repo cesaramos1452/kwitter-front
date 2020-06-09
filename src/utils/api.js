@@ -37,8 +37,6 @@ class API {
 
   ////////////////   Create a new user template
 
-
-
   // async createUser({ user }) {
   //   try {
   //     const result = await this.axiosInstance.post("/users", user);
@@ -75,16 +73,18 @@ class API {
   async createUser() {}
 
   ////////////////    get a user template
-  
 
-  // async getUser(user) {
-  //   try {
-  //     await this.axiosInstance.get(`/users/${username}`, user);
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async getUser(username) {
+    console.log({ username });
+    try {
+      const result = await this.axiosInstance.get(`/users/${username}`);
+      console.log(result);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 
   ////////////////   update a user template
 
@@ -97,7 +97,7 @@ class API {
   //   }
   // }
 
-////////////////   Create a message template
+  ////////////////   Create a message template
 
   // async createMessage({ messageId }) {
   //   try {
@@ -142,7 +142,7 @@ class API {
   //   }
   // }
 
-////////////////   remove a like template
+  ////////////////   remove a like template
 
   // async removeLike() {
   //   try {

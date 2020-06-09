@@ -4,14 +4,7 @@ import { Loader } from "../loader";
 import "./LoginForm.css";
 import { Hide, View } from "grommet-icons";
 import { grommet } from "grommet/themes";
-import {
-  Box,
-  Button,
-  Grommet,
-  Form,
-  FormField,
-  TextInput
-} from "grommet";
+import { Box, Button, Grommet, Form, FormField, TextInput } from "grommet";
 
 export const LoginForm = ({ login, loading, error }) => {
   // Not to be confused with "this.setState" in classes
@@ -34,30 +27,14 @@ export const LoginForm = ({ login, loading, error }) => {
   };
 
   return (
-      <Grommet 
-      full theme={grommet}
-      style={{ height: "47vh"}}
-      >
-        
-      <Box fill 
-      align="center" 
-      justify="center"
-      >
-        <Box 
-          align="center"
-        >
+    <Grommet full theme={grommet} style={{ height: "47vh" }}>
+      <Box fill align="center" justify="center">
+        <Box align="center">
           {loading && <Loader />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
-          <Form
-            className="loginForm"
-            id="login-form" 
-            onSubmit={handleLogin}
-          >
-            <FormField 
-              round="small"
-              border
-            >
-              <TextInput 
+          <Form className="loginForm" id="login-form" onSubmit={handleLogin}>
+            <FormField round="small" border>
+              <TextInput
                 type="text"
                 name="username"
                 autoFocus
@@ -67,12 +44,7 @@ export const LoginForm = ({ login, loading, error }) => {
                 onChange={handleChange}
               />
             </FormField>
-            <Box
-              direction="row"
-              align="center"
-              round="small"
-              border
-            >
+            <Box direction="row" align="center" round="small" border>
               <TextInput
                 type={reveal ? "text" : "password"}
                 name="password"
@@ -86,23 +58,17 @@ export const LoginForm = ({ login, loading, error }) => {
                 onClick={() => setReveal(!reveal)}
               />
             </Box>
-            <Box 
-              direction="row" 
-              justify="between" 
-              margin={{ top: "medium" }}
-            >
-            <Button 
-              type="submit" 
-              label="Sign In" 
-              primary
-              disabled={loading}
-            />
+            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+              <Button
+                type="submit"
+                label="Sign In"
+                primary
+                disabled={loading}
+              />
             </Box>
           </Form>
         </Box>
       </Box>
-      
-
     </Grommet>
   );
 };
@@ -112,4 +78,3 @@ LoginForm.propTypes = {
   loading: ProptTypes.bool,
   error: ProptTypes.string,
 };
-
