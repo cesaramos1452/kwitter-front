@@ -1,4 +1,4 @@
-GET http://kwitter-api.herokuapp.com/users/vinchinzo123
+GET http://kwitter-api.herokuapp.com/users
 
 
 

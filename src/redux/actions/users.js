@@ -35,6 +35,16 @@ export const updateUser = (user) => async (dispatch, getState) => {
   }
 };
 
+<<<<<<< src/redux/actions/users.js
+export const getUserList = () => async (dispatch, getState) => {
+  try {
+    const payload = await api.getUserList();
+    dispatch({ type: GET_USER_LIST, payload });
+} catch (err) {
+    console.log(err);
+  }
+};
+
 export const signup = (user) => async (dispatch, getState) => {
   try {
     const payload = await api.signup(user);
