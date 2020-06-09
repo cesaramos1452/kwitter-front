@@ -1,3 +1,4 @@
+export * from "./SignUp.js";
 export * from "./News.js";
 export * from "./Profile";
 export * from "./Messages.js";

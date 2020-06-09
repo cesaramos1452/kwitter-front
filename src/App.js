@@ -18,7 +18,6 @@ export const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <Navigation />
-      <CreateUser/>
     </PersistGate>
   </Provider>
 );

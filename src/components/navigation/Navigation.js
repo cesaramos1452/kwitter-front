@@ -1,11 +1,16 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
-import { NewsScreen, ProfileScreen, MessagesScreen, NotFoundScreen, HomeScreen } from "../../screens";
+import { SignUpScreen, ProfileScreen, MessagesScreen, NotFoundScreen, HomeScreen } from "../../screens";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
 export const Navigation = () => (
   <BrowserRouter>
     <Switch>
+    <ConnectedRoute
+        isProtected
+        path="/signup"
+        component={SignUpScreen}
+      />
       <ConnectedRoute
         isProtected
         path="/profiles/:username/newsfeed"
