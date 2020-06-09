@@ -76,6 +76,7 @@ const CreateUser = () => {
                     placeholder='DisplayName'
                     value={displayName} 
                     onChange={(event)=>setDisplayName(event.target.value)}
+                    className='inputmargin'
                     />
                         
                 </div>
@@ -83,16 +84,17 @@ const CreateUser = () => {
                 <div>
 
                     <input 
-                    type='text' 
+                    type='password' 
                     name='password' 
                     placeholder='password' 
                     value={password} 
                     onChange={(event)=>setPassword(event.target.value)}
+                    className='inputmargin'
                     />
                         
                 </div>
 
-                <button>Sign Up</button>
+                <button className='signup'>Sign Up</button>
 
            </form>
            
