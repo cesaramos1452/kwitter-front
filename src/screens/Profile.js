@@ -1,6 +1,7 @@
 import React from "react";
 import { MenuContainer } from "../components";
 import { UserProfileContainer } from "../components";
+import { UserProfileUpdateFormContainer } from "../components";
 
 import { Grommet, Header, Main, Text } from "grommet";
 import { grommet } from "grommet/themes";
@@ -13,6 +14,7 @@ export const ProfileScreen = (props) => {
       <MenuContainer username={username} displayName={displayName} />
       <Main margin="medium" pad="small">
         <UserProfileContainer />
+        <UserProfileUpdateFormContainer />
       </Main>
     </Grommet>
   );

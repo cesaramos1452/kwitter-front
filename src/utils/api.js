@@ -89,6 +89,7 @@ class API {
   ////////////////   update a user template
 
   async updateUser(user) {
+    console.log(user);
     try {
       const result = await this.axiosInstance.patch(
         `/users/${user.username}`,
@@ -118,7 +119,8 @@ class API {
 
   // async getMessage(messageId) {
   //   try {
-  //     await this.axiosInstance.get(`/messages/${messageId}`, messageId);
+  //     const result = await this.axiosInstance.get(`/messages/${messageId}`, messageId);
+  //     return result;
   //   } catch (err) {
   //     helpMeInstructor(err);
   //     return err;

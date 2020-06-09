@@ -24,7 +24,7 @@ const INITIAL_STATE = {
 export const usersReducer = (state = INITIAL_STATE, action) => {
   console.log("this is the action", { action });
   switch (action.type) {
-    case GET_USER:
+    case GET_USER: {
       const {
         username,
         displayName,
@@ -44,13 +44,17 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         pictureLocation,
         googleId,
       };
-    case UPDATE_USER:
+    }
+    case UPDATE_USER: {
+      const { displayName, about, updatedAt } = action.payload.user;
+
       return {
         ...INITIAL_STATE,
-        updatedAt: action.payload.user.updatedAt,
-        about: action.payload.user.about,
-        displayName: action.payload.user.displayName,
+        updatedAt,
+        about,
+        displayName,
       };
+    }
     default:
       return state;
   }
