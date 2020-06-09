@@ -10,7 +10,7 @@ import {
 } from "../actions";
 
 const INITIAL_STATE = {
-  userList: [],
+  users: [],
   isAuthenticated: false,
   username: "",
   displayName: "",
@@ -53,6 +53,14 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         updatedAt,
         about,
         displayName,
+      };
+    }
+    case GET_USER_LIST: {
+      console.log(action.payload);
+      const { users } = action.payload; //TODO
+      return {
+        ...INITIAL_STATE,
+        users,
       };
     }
     default:
