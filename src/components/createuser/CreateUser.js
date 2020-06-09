@@ -1,28 +1,101 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './CreateUser.css'
 
 const CreateUser = () => {
+    const [userName, setUserName] = useState('')
+    const [displayName, setDisplayName] = useState('')
+    const [password, setPassword] = useState('')
+
+    const fetchApi = () =>{
+        const data = {
+          "username": userName,
+          "displayName": displayName,
+          "password": password
+        }
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(data)
+        };
+    
+        fetch('https://kwitter-api.herokuapp.com/users', 
+        options)
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    
+      }
+
+    const onSubmit = (event) =>{
+        event.preventDefault()
+
+        if(displayName !== '' 
+        && password !== '' && userName !== ''){
+        fetchApi();
+        resetSignUp()
+        
+        }
+        else{alert('ERROR SIGNING UP')}
+        
+    }
+
+    const resetSignUp = () =>{
+        setUserName('');
+        setDisplayName('')
+        setPassword('');
+    }
+    
     return (
-       <div name='createuser'>
-           <div>
-                <form>
-                    <label htmlFor='username'>User name</label>
-                    <input type='text' name='userName'/>
-                </form>
-           </div>
+       <div className='createuser'>
+           <form onSubmit={onSubmit}>
+                <div>
 
-           <div>
-                <form>
-                    <label htmlFor='displayname'>Display name</label>
-                    <input type='text' name='displayName'/>
-                </form>
-           </div>
+                    <input 
+                    type='text' 
+                    name='userName' 
+                    placeholder='Username'
+                    autoFocus 
+                    value={userName} 
+                    onChange={(event)=>setUserName(event.target.value)}
+                    />
+                        
+                </div>
 
-           <div>
-                <form>
-                    <label htmlFor='password'>Password</label>
-                    <input type='text' name='password'/>
-                </form>
-           </div>
+                <div>
+
+                    <input 
+                    type='text' 
+                    name='displayName' 
+                    placeholder='DisplayName'
+                    value={displayName} 
+                    onChange={(event)=>setDisplayName(event.target.value)}
+                    />
+                        
+                </div>
+
+                <div>
+
+                    <input 
+                    type='text' 
+                    name='password' 
+                    placeholder='password' 
+                    value={password} 
+                    onChange={(event)=>setPassword(event.target.value)}
+                    />
+                        
+                </div>
+
+                <button>Sign Up</button>
+
+           </form>
+           
 
        </div>
     )

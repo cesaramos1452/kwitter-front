@@ -1,0 +1,11 @@
+.createuser{
+    width: 200px;
+    height: 100px;
+    background-color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    text-align: center;
+    font-size: small;
+    padding-top: 25px;
+    margin-bottom: 20px;
+}
