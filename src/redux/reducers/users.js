@@ -47,6 +47,9 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
     case UPDATE_USER:
       return {
         ...INITIAL_STATE,
+        updatedAt: action.payload.user.updatedAt,
+        about: action.payload.user.about,
+        displayName: action.payload.user.displayName,
       };
     default:
       return state;
