@@ -14,14 +14,12 @@ export const UserProfileUpdateForm = (props) => {
     password: "",
   });
 
-
   const [reveal, setReveal] = React.useState(false);
 
   const handleDeleteUser = () => {
     props.deleteUser(props.username);
     props.logout();
   };
-
 
   const clickHandler = () => {
     let user = {
@@ -43,7 +41,7 @@ export const UserProfileUpdateForm = (props) => {
 
   return (
     <Grommet full theme={grommet} style={{ height: "47vh" }}>
-////////////vero's changes
+      {/* ////////////vero's changes
     //    <Form className="updateForm" id="update-form" onSubmit={clickHandler}>
   //      <Box className="updateTextArea" direction="row" align="center" round="small">
    //   <TextInput 
@@ -85,7 +83,7 @@ export const UserProfileUpdateForm = (props) => {
   //      primary
   //    />
  //       </Box>
-  //      </Form>
+  //      </Form> */}
       <Box fill align="center" justify="center">
         <Box align="center">
           <Box direction="row" align="center" round="small">
