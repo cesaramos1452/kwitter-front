@@ -115,15 +115,15 @@ class API {
 
   ////////////////   Create a message template
 
-  // async createMessage({ messageId }) {
-  //   try {
-  //     const result = await this.axiosInstance.post("/messages", messageId);
-  //     return result;
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async createMessage(messageText) {
+    try {
+      const result = await this.axiosInstance.post("/messages", messageText);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 
   ////////////////   get a message template
 

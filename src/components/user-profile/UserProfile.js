@@ -6,14 +6,15 @@ import { grommet } from "grommet/themes";
 import "./UserProfile.css";
 
 export const UserProfile = (props) => {
+  console.log(props);
   const [updating, setUpdating] = useState(false);
 
   useEffect(() => {
     // fetch(`http://kwitter-api.herokuapp.com/users/${props.username}`)
     //   .then((res) => res.json())
     //   .then((user) => setbio(user));
-    props.getUser(props.username);
-  }, []);
+    props.getUser(props.profile);
+  }, [props.profile]);
 
   const updateProfile = () => {
     setUpdating(!updating);
@@ -45,7 +46,6 @@ export const UserProfile = (props) => {
               {/* TODO: conditional render if updating is true or false */}
               {/* add SAVE BUTTON, andd DISCARD button */}
               {/* Have input fields to update prefilled with from API call */}
-              <button onClick={updateProfile}>Update Bio</button>
             </div>
           </div>
         )}
