@@ -10,7 +10,7 @@ import { grommet } from "grommet/themes";
 
 
 
-export const MessagesScreen = (props) => {
+export const UpdateProfileScreen = (props) => {
   console.log(props);
   const { username } = props.match.params;
   console.log(username);
