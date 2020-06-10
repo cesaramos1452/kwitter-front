@@ -52,3 +52,13 @@ export const createUser = (user) => async (dispatch, getState) => {
     console.log(err);
   }
 };
+
+export const deleteUser = (username) => async (dispatch, getState) => {
+  try {
+    console.log(username);
+    const payload = await api.deleteUser(username);
+    dispatch({ type: DELETE_USER, payload });
+  } catch (err) {
+    console.log(err);
+  }
+};

@@ -48,6 +48,17 @@ class API {
     }
   }
 
+  async deleteUser(user) {
+    console.log(user);
+    try {
+      const result = await this.axiosInstance.delete(`/users/${user}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
+
   async login({ username, password }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
