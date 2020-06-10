@@ -38,14 +38,15 @@ export const getUserList = () => async (dispatch, getState) => {
   try {
     const payload = await api.getUserList();
     dispatch({ type: GET_USER_LIST, payload });
-} catch (err) {
+  } catch (err) {
     console.log(err);
   }
 };
 
-export const signup = (user) => async (dispatch, getState) => {
+export const createUser = (user) => async (dispatch, getState) => {
   try {
-    const payload = await api.signup(user);
+    console.log(user);
+    const payload = await api.createUser(user);
     dispatch({ type: CREATE_NEW_USER, payload });
   } catch (err) {
     console.log(err);

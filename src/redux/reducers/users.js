@@ -63,6 +63,9 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         users,
       };
     }
+    case CREATE_NEW_USER: {
+      return { ...INITIAL_STATE };
+    }
     default:
       return state;
   }
