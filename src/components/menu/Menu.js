@@ -23,24 +23,17 @@ export const Avatar = ({ ...rest }) => (
 export const Menu = (props) => {
   const { isAuthenticated, logout, username } = props;
   return (
-    <div id="menu">
       <Grommet theme={grommet}>
-        <Header
-          round="small"
-          border
-          background="theme"
-          margin="medium"
-          pad="medium"
-          alignSelf="stretch"
-        >
+        <div className="menuBar">
+        <div>
           <img className="logo" src={Logo} alt="logo" />
-
-          <h1>Candy</h1>
-
-          <Box direction="row" gap="medium">
+        </div>
+        <div>
+          <h1 className="siteName" >Candy</h1>
+        </div>
+        <div>
             {isAuthenticated && (
               <div id="menu-links">
-                {/* temporarily hard coding the links */}
                 <Link to={`/profiles/${username}/newsfeed`}>
                   <Anchor icon={<Article />} />
                 </Link>
@@ -55,10 +48,9 @@ export const Menu = (props) => {
                 </Link>
               </div>
             )}
-          </Box>
-        </Header>
+        </div>
+        </div>
       </Grommet>
-    </div>
   );
 };
 
