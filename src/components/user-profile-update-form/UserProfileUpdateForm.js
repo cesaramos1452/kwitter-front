@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./UserProfileUpdateForm.css";
 
 import { grommet } from "grommet/themes";
@@ -14,6 +15,7 @@ export const UserProfileUpdateForm = (props) => {
 
   const handleDeleteUser = () => {
     props.deleteUser(props.username);
+    props.logout();
   };
 
   const clickHandler = () => {
@@ -65,7 +67,9 @@ export const UserProfileUpdateForm = (props) => {
           </Box>
           <Box direction="row" justify="between" margin={{ top: "medium" }}>
             <button onClick={clickHandler}>Save Changes</button>
-            <button onClick={handleDeleteUser}>DELETE USER PROFILE</button>
+            <Link to={`/`}>
+              <button onClick={handleDeleteUser}>DELETE USER PROFILE</button>
+            </Link>
           </Box>
         </Box>
       </Box>
