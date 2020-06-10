@@ -11,6 +11,7 @@ import {
 
 const INITIAL_STATE = {
   users: [],
+  deletedUser: "",
   isAuthenticated: false,
   username: "",
   displayName: "",
@@ -62,6 +63,13 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         ...INITIAL_STATE,
         users,
       };
+    }
+    case CREATE_NEW_USER: {
+      return { ...INITIAL_STATE };
+    }
+    case DELETE_USER: {
+      const { deletedUser } = action.payload;
+      return { ...INITIAL_STATE, deletedUser };
     }
     default:
       return state;
