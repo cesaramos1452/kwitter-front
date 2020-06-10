@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-import { updateUser } from "../../redux/actions/users";
+import { updateUser, deleteUser } from "../../redux/actions/users";
+import { logout } from "../../redux/actions/auth";
 
 const mapStateToProps = (state) => ({
   username: state.auth.username,
@@ -8,6 +9,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   updateUser,
+  deleteUser,
+  logout,
 };
 
 export const enhancer = connect(mapStateToProps, mapDispatchToProps);
