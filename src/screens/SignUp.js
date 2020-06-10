@@ -3,8 +3,7 @@ import { SignUpFormContainer, MenuContainer } from "../components";
 
 export const SignUpScreen = () => (
   <div className="welcomeMessage">
-
     <MenuContainer />
-    {/* <SignUpFormContainer /> */}
-    </div>
+    <SignUpFormContainer />
+  </div>
 );

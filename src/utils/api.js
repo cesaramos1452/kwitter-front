@@ -37,9 +37,10 @@ class API {
 
   ////////////////   Create a new user template
 
-  async createUser({ newuser }) {
+  async createUser(user) {
+    console.log(user);
     try {
-      const result = await this.axiosInstance.post("/users", newuser);
+      const result = await this.axiosInstance.post("/users", user);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -69,8 +70,6 @@ class API {
       return err;
     }
   }
-
-  async createUser() {}
 
   ////////////////    get a user template
 
