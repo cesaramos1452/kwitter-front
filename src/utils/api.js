@@ -109,14 +109,9 @@ class API {
   }
   ////////////////   update a user template
 
-  async updateUser(user) {
-    console.log(user);
+  async getUserPicture(username) {
     try {
-      const result = await this.axiosInstance.patch(
-        `/users/${user.username}`,
-        user.requestBody
-      );
-      console.log(result);
+      const result = await this.axiosInstance.get(`/users/${username}/picture`);
       return result;
     } catch (err) {
       helpMeInstructor(err);
