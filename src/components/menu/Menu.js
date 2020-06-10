@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Logo from "../images/logo.png"
 import "./Menu.css";
 
-import { Article, User, ChatOption, Logout} from 'grommet-icons';
+import { Article, User, UserSettings, Logout} from 'grommet-icons';
 
 import { Anchor, Box, Grommet, Header } from "grommet";
 import { grommet } from "grommet/themes";
@@ -64,8 +64,8 @@ export const Menu = ({ isAuthenticated, logout, props }) => {
                 <Link to={`/profiles/vinchinzo123`}>
                   <Anchor icon={<User />} />
                 </Link>
-                <Link to={`/profiles/vinchinzo123/messages`}>
-                  <Anchor icon={<ChatOption />} />
+                <Link to={`/profiles/vinchinzo123/editprofile`}>
+                  <Anchor icon={<UserSettings />} />
                 </Link>
                 <Link to={`/`} onClick={logout}>
                   <Anchor icon={<Logout />} onClick={logout} />
