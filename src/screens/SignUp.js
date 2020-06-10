@@ -5,6 +5,6 @@ export const SignUpScreen = () => (
   <div className="welcomeMessage">
 
     <MenuContainer />
-    {/* <SignUpFormContainer /> */}
+    <SignUpFormContainer />
     </div>
 );

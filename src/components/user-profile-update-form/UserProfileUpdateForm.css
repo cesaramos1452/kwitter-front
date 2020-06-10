@@ -1,3 +1,15 @@
-body {
+.makingChanges {
     opacity: 0.5;
+}
+
+.updateForm {
+    background-color: aqua;
+    max-width: 65em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+textArea {
+    border: none;
+    max-width: 100%;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./UserProfileUpdateForm.css";
 
+import { Hide, View } from "grommet-icons";
 import { grommet } from "grommet/themes";
 import { Box, Button, Grommet, Form, FormField, TextInput } from "grommet";
 
@@ -11,6 +12,8 @@ export const UserProfileUpdateForm = (props) => {
     about: "",
     password: "",
   });
+
+  const [reveal, setReveal] = React.useState(false);
 
   const clickHandler = () => {
     let user = {
@@ -32,23 +35,26 @@ export const UserProfileUpdateForm = (props) => {
 
   return (
     <Grommet full theme={grommet} style={{ height: "47vh" }}>
-       <Box fill align="center" justify="center">
-        <Box align="center">
-        <Box direction="row" align="center" round="small">
-      <TextInput
+        <Form className="updateForm" id="update-form" onSubmit={clickHandler}>
+        <Box className="updateTextArea" direction="row" align="center" round="small">
+      <TextInput 
         type="text"
         name="displayName"
         value={input.displayName}
         onChange={changeHandler}
         placeholder={props.users.displayName}
       />
-      <TextInput
+      </Box>
+      <Box className="updateTextArea" direction="row" align="center" round="small">
+      <TextInput 
         type="text"
         name="about"
         value={input.about}
         onChange={changeHandler}
         placeholder={props.users.about === "" ? "add a bio" : props.users.about}
       />
+      </Box>
+      <Box className="updateTextArea" direction="row" align="center" round="small">
       <TextInput
         type="text"
         name="password"
@@ -56,12 +62,21 @@ export const UserProfileUpdateForm = (props) => {
         onChange={changeHandler}
         placeholder="enter password"
       />
+      <Button
+        icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
+        onClick={() => setReveal(!reveal)}
+      />
       </Box>
+
+      
       <Box direction="row" justify="between" margin={{ top: "medium" }}>
-      <button onClick={clickHandler}>Save Changes</button>
-      </Box>
-      </Box>
-      </Box>
-      </Grommet>
+      <Button
+        type="submit"
+        label="Save Changes"
+        primary
+      />
+        </Box>
+        </Form>
+    </Grommet>
   );
 };

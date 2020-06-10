@@ -38,7 +38,7 @@ export const SignUpForm = ({ signup, loading, error }) => {
             <FormField round="small" border>
               <TextInput
                 type="text"
-                label="test"
+                label="username"
                 name="username"
                 autoFocus
                 value={state.username}
@@ -50,6 +50,7 @@ export const SignUpForm = ({ signup, loading, error }) => {
             <FormField round="small" border>
             <TextInput
                 type="text"
+                label="display name"
                 name="displayName"
                 autoFocus
                 value={state.displayName}
