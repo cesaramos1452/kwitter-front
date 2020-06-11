@@ -163,15 +163,15 @@ class API {
 
   ////////////////   get a message template
 
-  // async getMessage(messageId) {
-  //   try {
-  //     const result = await this.axiosInstance.get(`/messages/${messageId}`, messageId);
-  //     return result;
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async getMessages() {
+    try {
+      const result = await this.axiosInstance.get(`/messages`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 
   ////////////////   delete a message template
 
