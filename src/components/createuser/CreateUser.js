@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import './CreateUser.css'
 
 const CreateUser = () => {
-    const [userName, setUserName] = useState('')
-    const [displayName, setDisplayName] = useState('')
-    const [password, setPassword] = useState('')
+    const [userName, setUserName] = useState('');
+    const [displayName, setDisplayName] = useState('');
+    const [password, setPassword] = useState('');
 
     const fetchApi = () =>{
         const data = {
@@ -39,7 +39,7 @@ const CreateUser = () => {
         if(displayName !== '' 
         && password !== '' && userName !== ''){
         fetchApi();
-        resetSignUp()
+        resetSignUp();
         
         }
         else{alert('ERROR SIGNING UP')}
@@ -48,7 +48,7 @@ const CreateUser = () => {
 
     const resetSignUp = () =>{
         setUserName('');
-        setDisplayName('')
+        setDisplayName('');
         setPassword('');
     }
     

@@ -10,7 +10,7 @@ import { grommet } from "grommet/themes";
 
 
 
-export const MessagesScreen = (props) => {
+const Messages = (props) => {
   console.log(props);
   const { username } = props.match.params;
   console.log(username);
@@ -19,7 +19,7 @@ export const MessagesScreen = (props) => {
     event.preventDefault();
 }
 
-handleAdd = (event) => {
+ const handleAdd = (event) => {
     event.preventDefault();
     let newMessage = {
       userId: 785,
@@ -49,3 +49,5 @@ handleAdd = (event) => {
     </Grommet>
   );
 };
+
+export default Messages
