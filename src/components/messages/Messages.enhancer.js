@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { getMessagesList } from "../../redux/actions/message"; //
 
 const mapStateToProps = (state) => ({
-  messages: state.messages
+  messages: state.messages.messages,
 });
 
 const mapDispatchToProps = {

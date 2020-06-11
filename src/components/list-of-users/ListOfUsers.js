@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ListOfUsers.css";
-import { MessageContainer } from "../../components/messages/index";
 
+import { MessageContainer } from "../../components/messages/index";
 import { Avatar, Box, List, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
 
@@ -22,11 +22,11 @@ export const ListOfUsers = (props) => {
         <div className="userList">
           {props.users.length !== 0 &&
             props.users.map((user) => (
-              <Link to={`/profiles/${user.username}`}>
+              <Link
+                key={user.username + Math.random()}
+                to={`/profiles/${user.username}`}
+              >
                 {user.username}
-                <List className="user">
-                  <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
-                </List>
               </Link>
               // <li className="user" >
               //   <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
