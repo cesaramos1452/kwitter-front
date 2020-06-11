@@ -6,19 +6,8 @@ import "./Menu.css";
 
 import { Article, User, UserSettings, Logout } from "grommet-icons";
 
-import { Anchor, Box, Grommet, Header } from "grommet";
+import { Anchor, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
-
-export const Avatar = ({ ...rest }) => (
-  <Box
-    height="xsmall"
-    width="xsmall"
-    // src={Logo}
-    round="full"
-    background="url({Logo})"
-    {...rest}
-  />
-);
 
 export const Menu = (props) => {
   const { isAuthenticated, logout, username } = props;
