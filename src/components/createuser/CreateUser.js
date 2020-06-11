@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import './CreateUser.css'
 
 const CreateUser = () => {
-    const [userName, setUserName] = useState('')
-    const [displayName, setDisplayName] = useState('')
-    const [password, setPassword] = useState('')
+    const [userName, setUserName] = useState('');
+    const [displayName, setDisplayName] = useState('');
+    const [password, setPassword] = useState('');
 
     const fetchApi = () =>{
         const data = {
