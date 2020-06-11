@@ -1,19 +1,33 @@
 // TODO: implement
 
-import { GET_LIST_MESSAGES } from "../actions";
+import { 
+  GET_LIST_MESSAGES,
+  CREATE_MESSAGE
+
+} from "../actions";
+
 
 const INITIAL_STATE = {
   messages: [],
+  text: ''
 };
 
 export const messageReducer = (state = INITIAL_STATE, action) => {
-  const { messages } = action.payload;
-
     switch (action.type) {
-      case GET_LIST_MESSAGES:return{
-          ...state,
-          messages
+      case GET_LIST_MESSAGES:{
+        const { messages } = action.payload;
+          return {
+            ...state,
+            messages
+          }
         };
+      case CREATE_MESSAGE:{
+        const {text} = action.payload;
+        return{
+          ...state,
+          text
+        }
+      }
       default:
         return state;
     }
