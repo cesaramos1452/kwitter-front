@@ -23,15 +23,13 @@
 .userList {
     display: flex;
     flex-direction: column;
-    
-    
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    min-width: 33%;
 }
 
 .user {
     list-style: none;
     text-decoration: none;
     padding: 22px;
-
-    /* background-color: blue; */
-    background-color: yellow;
 }  
