@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
-import { getUser } from "../../redux/actions/users";
 import { Grommet, Header, Main, Text, Button } from "grommet";
 import { grommet } from "grommet/themes";
 import "./UserProfile.css";
+import ImageUploader from "react-images-upload";
+import FormData from "form-data";
 
 export const UserProfile = (props) => {
-  console.log(props);
-  const [updating, setUpdating] = useState(false);
+  console.log({ props });
+  const fileInput = React.createRef();
 
   useEffect(() => {
-    // fetch(`http://kwitter-api.herokuapp.com/users/${props.username}`)
-    //   .then((res) => res.json())
-    //   .then((user) => setbio(user));
     props.getUser(props.profile);
-  }, [props.profile]);
+    console.log(props);
+  }, [props.users.pictureLocation]);
 
-  const updateProfile = () => {
-    setUpdating(!updating);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const formData = new FormData(e.target);
+    console.log(formData);
+    props.putUserPicture({
+      username: props.profile,
+      userPicture: formData,
+    });
   };
-  console.log({ props });
+
   return (
     <Grommet theme={grommet}>
       <Main margin="medium" pad="small">
@@ -31,11 +37,36 @@ export const UserProfile = (props) => {
                 className="ProfileImg"
                 src={
                   props.users.pictureLocation !== null
-                    ? props.users.pictureLocation
+                    ? "https://kwitter-api.herokuapp.com" +
+                      props.users.pictureLocation
                     : BlankProfile
                 }
                 alt="profile picture"
               />
+              <ImageUploader
+                withIcon={true}
+                buttonText="Choose images"
+                name="image"
+                ref={fileInput}
+                onChange={() => {
+                  let picture = fileInput.current.files[0];
+                  props.putUserPicture({
+                    username: props.profile,
+                    userPicture: picture,
+                  });
+                }}
+                imgExtension={[".jpg", ".png", ".gif"]}
+                maxFileSize={5242880}
+              />
+              <label htmlFor="fileElem">Select some files</label>
+              <form onSubmit={handleSubmit}>
+                <label>
+                  Upload file:
+                  <input type="file" ref={fileInput} name="picture" />
+                </label>
+                <br />
+                <button type="submit">Submit</button>
+              </form>
             </div>
             <div>
               <p>{props.users.displayName}</p>
