@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
-import { getMessages } from "../../redux/actions/message"; //
+import { getMessagesList } from "../../redux/actions/message"; //
 
 const mapStateToProps = (state) => ({
-  messages: state.messages,
+  messages: state.messages
 });
 
 const mapDispatchToProps = {
-  getMessages,
+  getMessagesList,
 };
 
 export const enhancer = connect(mapStateToProps, mapDispatchToProps);

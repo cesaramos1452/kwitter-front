@@ -4,8 +4,8 @@ import "./NewMessages.css";
 const NewMessages = (props) => {
   console.log({ props });
   useEffect(() => {
-    // props.getMessages();
-  }, [props]);
+    props.getMessagesList();
+  });
 
   return (
     <div>
