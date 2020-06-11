@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./ListOfUsers.css";
+// import NewMessages from "./components/messages/NewMessages";
+
+import { Avatar, Box, List, Grommet } from "grommet";
+import { grommet } from "grommet/themes";
 
 export const ListOfUsers = (props) => {
   console.log({ props });
@@ -7,14 +12,30 @@ export const ListOfUsers = (props) => {
     props.getUserList();
   }, []);
   return (
-    <div>
-      {props.users.length !== 0 &&
+    <Grommet theme={grommet}>
+    <div className="newsFeed">
+      <div className="messages">
+        <p>messages</p>
+        {/* <NewMessages/> */}
+      </div>
+      <div className="userList"> 
+        {props.users.length !== 0 &&
         props.users.map((user) => (
-          <li style={{ listStyle: "none" }}>
-            <Link to={`/profiles/${user.username}`}>{user.username}</Link>
-          </li>
+          <Link to={`/profiles/${user.username}`}>{user.username}
+          <List className="user" >
+            <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
+          </List>
+          </Link>
+          // <li className="user" >
+          //   <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
+          //   {/* <Avatar src={${user.picture}}/> */}
+          //   <Link to={`/profiles/${user.username}`}>{user.username}</Link>
+          // </li>
         ))}
-      this is a list of users
+      </div>
     </div>
+    </Grommet>
   );
 };
+
+

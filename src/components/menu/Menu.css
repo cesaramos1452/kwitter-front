@@ -1,6 +1,6 @@
 #menu-links {
   display: flex;
-  padding-left: 1em;
+  padding: 2em;
   justify-content: flex-end;
 }
 
@@ -15,6 +15,26 @@
   height: 70px;
   width: 70px;
   border-radius: 25%;
+  padding: .5em;
 }
 
+.siteName {
+  padding: .5em;
+}
+
+.menuBar {
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  margin: .5em;
+  padding: .5em;
+  color: #444444;
+  border: solid 1px rgba(0,0,0,0.33);
+  border-radius: 12px;
+  /* min-width: 0;
+  min-height: 0; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
 

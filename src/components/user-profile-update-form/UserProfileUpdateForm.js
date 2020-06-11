@@ -41,49 +41,49 @@ export const UserProfileUpdateForm = (props) => {
 
   return (
     <Grommet full theme={grommet} style={{ height: "47vh" }}>
-      {/* ////////////vero's changes
-    //    <Form className="updateForm" id="update-form" onSubmit={clickHandler}>
-  //      <Box className="updateTextArea" direction="row" align="center" round="small">
-   //   <TextInput 
-   //     type="text"
-  //      name="displayName"
-  //      value={input.displayName}
-  //      onChange={changeHandler}
-   //     placeholder={props.users.displayName}
-  //    />
-  //    </Box>
-  //    <Box className="updateTextArea" direction="row" align="center" round="small">
-  //    <TextInput 
-  //      type="text"
-  //      name="about"
-  //      value={input.about}
-  //      onChange={changeHandler}
-  //      placeholder={props.users.about === "" ? "add a bio" : props.users.about}
-  //    />
-  //    </Box>
-  //    <Box className="updateTextArea" direction="row" align="center" round="small">
-  //    <TextInput
-  //      type="text"
-  //      name="password"
-  //      value={input.password}
-  //      onChange={changeHandler}
-  //      placeholder="enter password"
-  //    />
-  //    <Button
-  //      icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
-  //      onClick={() => setReveal(!reveal)}
-  //    />
-  //    </Box>
+{/* ////////////vero's changes
+        <Form className="updateForm" id="update-form" onSubmit={clickHandler}>
+        <Box className="updateTextArea" direction="row" align="center" round="small">
+      <TextInput 
+        type="text"
+        name="displayName"
+        value={input.displayName}
+        onChange={changeHandler}
+        placeholder={props.users.displayName}
+      />
+      </Box>
+      <Box className="updateTextArea" direction="row" align="center" round="small">
+      <TextInput 
+        type="text"
+        name="about"
+        value={input.about}
+        onChange={changeHandler}
+        placeholder={props.users.about === "" ? "add a bio" : props.users.about}
+      />
+      </Box>
+      <Box className="updateTextArea" direction="row" align="center" round="small">
+      <TextInput
+        type="text"
+        name="password"
+        value={input.password}
+        onChange={changeHandler}
+        placeholder="enter password"
+      />
+      <Button
+        icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
+        onClick={() => setReveal(!reveal)}
+      />
+      </Box>
 
       
-  //    <Box direction="row" justify="between" margin={{ top: "medium" }}>
-  //    <Button
-   //     type="submit"
-  //      label="Save Changes"
-  //      primary
-  //    />
- //       </Box>
-  //      </Form> */}
+      <Box direction="row" justify="between" margin={{ top: "medium" }}>
+      <Button
+        type="submit"
+        label="Save Changes"
+        primary
+      />
+        </Box>
+        </Form> */}
       <Box fill align="center" justify="center">
         <Box align="center">
           <Box direction="row" align="center" round="small">

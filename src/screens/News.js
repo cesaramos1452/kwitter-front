@@ -12,16 +12,6 @@ export const NewsScreen = (props) => {
     <Grommet theme={grommet}>
       <MenuContainer />
       <Main margin="medium" pad="small">
-        <h3>News Feed</h3>
-        {/* <Search placeHolder='Search'
-            inline={true}
-            value=''
-            // onDOMChange={...}
-          /> */}
-        {/* <Anchor 
-          icon={<Edit />} 
-           onClick={}
-          /> */}
         <ListOfUsersContainer />
       </Main>
     </Grommet>
