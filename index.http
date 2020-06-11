@@ -1,4 +1,4 @@
-GET http://kwitter-api.herokuapp.com/users/
+GET http://kwitter-api.herokuapp.com/users
 
 
 
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-itPATCH http://kwitter-api.herokuapp.com/users/vinchinzo123 HTTP/1.1
+PATCH http://kwitter-api.herokuapp.com/users/vinchinzo123 HTTP/1.1
 content-type: application/json
 
 
