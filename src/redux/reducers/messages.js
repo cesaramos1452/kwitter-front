@@ -7,14 +7,14 @@ const INITIAL_STATE = {
 };
 
 export const messageReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case GET_LIST_MESSAGES:
-      const { messages } = action.payload;
-      return {
-        ...state,
-        messages,
-      };
-    default:
-      return state;
-  }
+  const { messages } = action.payload;
+
+    switch (action.type) {
+      case GET_LIST_MESSAGES:return{
+          ...state,
+          messages
+        };
+      default:
+        return state;
+    }
 };

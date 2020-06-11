@@ -1,8 +1,10 @@
 import React from "react";
 import { MenuContainer } from "../components";
+import { MessageContainer } from "../components";
 import { ListOfUsersContainer } from "../components";
-import { Grommet, Main, Anchor } from "grommet";
-// import Search from 'grommet/components/Search';
+import { Grommet } from "grommet";
+import "./News.css";
+
 import { grommet } from "grommet/themes";
 
 export const NewsScreen = (props) => {
@@ -10,9 +12,14 @@ export const NewsScreen = (props) => {
   return (
     <Grommet theme={grommet}>
       <MenuContainer />
-      <Main margin="medium" pad="small">
-        <ListOfUsersContainer />
-      </Main>
+      <div className="newsFeed">
+        <div className="messages">
+          <MessageContainer />
+        </div>
+        <div className="userList">
+          <ListOfUsersContainer />
+        </div>
+      </div>
     </Grommet>
   );
 };
