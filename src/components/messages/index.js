@@ -1,4 +1,4 @@
 import { enhancer } from "./Messages.enhancer";
-import NewMessages from "./NewMessages";
+import Messages from "./Messages";
 
-export const MessageContainer = enhancer(NewMessages);
+export const MessageContainer = enhancer(Messages);

@@ -166,6 +166,7 @@ class API {
   async getMessages() {
     try {
       const result = await this.axiosInstance.get(`/messages`);
+      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
