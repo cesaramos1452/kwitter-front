@@ -10,14 +10,12 @@ const NewMessages = () =>{
         }
         const options = {
           method: 'POST',
-          mode: 'cors',
-          headers: {
+
+          headers: { 
             'Content-Type': 'application/json',
-            
-            
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: JSON.stringify(data)
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlc2FyYW1vczE0NTIiLCJpYXQiOjE1OTE4ODYxMzEsImV4cCI6MTU5MTk3MjUzMX0.OVfA33WyrZ3MMqW6dqQ2hjyTdCrtoVJipFE1qlW06aI' ,},
+          
+            body: JSON.stringify(data)
         };
     
         fetch('https://kwitter-api.herokuapp.com/messages', 
