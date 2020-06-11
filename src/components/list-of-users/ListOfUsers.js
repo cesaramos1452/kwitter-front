@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ListOfUsers.css";
+// import NewMessages from "./components/messages/NewMessages";
 
 import { Avatar, Box, List, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
@@ -14,7 +15,8 @@ export const ListOfUsers = (props) => {
     <Grommet theme={grommet}>
     <div className="newsFeed">
       <div className="messages">
-        <p>message</p>
+        <p>messages</p>
+        {/* <NewMessages/> */}
       </div>
       <div className="userList"> 
         {props.users.length !== 0 &&

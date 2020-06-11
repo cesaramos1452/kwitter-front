@@ -39,7 +39,7 @@ const CreateUser = () => {
         if(displayName !== '' 
         && password !== '' && userName !== ''){
         fetchApi();
-        resetSignUp()
+        resetSignUp();
         
         }
         else{alert('ERROR SIGNING UP')}
@@ -48,7 +48,7 @@ const CreateUser = () => {
 
     const resetSignUp = () =>{
         setUserName('');
-        setDisplayName('')
+        setDisplayName('');
         setPassword('');
     }
     
