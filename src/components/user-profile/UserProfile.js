@@ -32,7 +32,6 @@ export const UserProfile = (props) => {
         {props.users !== undefined && (
           <div className="userProfile">
             <div>
-              {/* <img src={bio.user.pictureLocation} alt="profile picture" /> */}
               <img
                 className="ProfileImg"
                 src={
@@ -43,21 +42,7 @@ export const UserProfile = (props) => {
                 }
                 alt="profile picture"
               />
-              <ImageUploader
-                withIcon={true}
-                buttonText="Choose images"
-                name="image"
-                ref={fileInput}
-                onChange={() => {
-                  let picture = fileInput.current.files[0];
-                  props.putUserPicture({
-                    username: props.profile,
-                    userPicture: picture,
-                  });
-                }}
-                imgExtension={[".jpg", ".png", ".gif"]}
-                maxFileSize={5242880}
-              />
+
               <label htmlFor="fileElem">Select some files</label>
               <form onSubmit={handleSubmit}>
                 <label>
