@@ -14,14 +14,12 @@ export const UserProfileUpdateForm = (props) => {
     password: "",
   });
 
-
   const [reveal, setReveal] = React.useState(false);
 
   const handleDeleteUser = () => {
     props.deleteUser(props.username);
     props.logout();
   };
-
 
   const clickHandler = () => {
     let user = {

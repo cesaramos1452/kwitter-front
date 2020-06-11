@@ -33,12 +33,12 @@ class API {
     );
 
     this.axiosInstance = axiosInstance;
+    console.log(axiosInstance);
   }
 
   ////////////////   Create a new user template
 
   async createUser(user) {
-    console.log(user);
     try {
       const result = await this.axiosInstance.post("/users", user);
       return result;
@@ -49,7 +49,6 @@ class API {
   }
 
   async deleteUser(user) {
-    console.log(user);
     try {
       const result = await this.axiosInstance.delete(`/users/${user}`);
       return result;
@@ -85,7 +84,6 @@ class API {
   ////////////////    get a user template
 
   async getUser(username) {
-    console.log({ username });
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
       console.log(result);
@@ -100,7 +98,6 @@ class API {
   async getUserList() {
     try {
       const result = await this.axiosInstance.get(`/users`);
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -108,7 +105,6 @@ class API {
     }
   }
   ////////////////   update a user template
-
   async updateUser(user) {
     console.log(user);
     try {
@@ -121,6 +117,35 @@ class API {
     } catch (err) {
       helpMeInstructor(err);
       return err;
+    }
+  }
+
+  async getUserPicture(pictureLocation) {
+    console.log(pictureLocation);
+    try {
+      const result = await this.axiosInstance.get(pictureLocation, {
+        headers: { accpet: "image/png" },
+      });
+      console.log(result);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
+
+  async putUserPicture({ userPicture, username }) {
+    console.log(userPicture, username);
+    try {
+      const result = await this.axiosInstance.put(
+        `/users/${username}/picture`,
+        userPicture
+      );
+      console.log(result);
+      return result;
+    } catch (err) {
+      console.log(err);
+      helpMeInstructor(err);
     }
   }
 

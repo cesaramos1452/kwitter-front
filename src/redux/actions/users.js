@@ -62,3 +62,21 @@ export const deleteUser = (username) => async (dispatch, getState) => {
     console.log(err);
   }
 };
+
+export const getUserPicture = (username) => async (dispatch, getState) => {
+  try {
+    const payload = await api.getUserPicture(username);
+    dispatch({ type: GET_USER_PICTURE, payload });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const putUserPicture = (user) => async (dispatch, getState) => {
+  try {
+    const payload = await api.putUserPicture(user);
+    dispatch({ type: PUT_USER_PICTURE, payload });
+  } catch (err) {
+    console.log(err);
+  }
+};

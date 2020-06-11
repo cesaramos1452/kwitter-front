@@ -71,6 +71,15 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
       const { deletedUser } = action.payload;
       return { ...INITIAL_STATE, deletedUser };
     }
+    case GET_USER_PICTURE: {
+      const { pictureLocation } = action.payload;
+      console.log(pictureLocation);
+      return { ...INITIAL_STATE, pictureLocation };
+    }
+    case PUT_USER_PICTURE: {
+      const { pictureLocation } = action.payload;
+      return { ...INITIAL_STATE, pictureLocation };
+    }
     default:
       return state;
   }
