@@ -149,8 +149,8 @@ class API {
 
   async createMessage(text) {
     try {
-      const result = await this.axiosInstance.post("/messages",text)
-      console.log(result)
+      const result = await this.axiosInstance.post("/messages", text);
+      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -160,9 +160,11 @@ class API {
 
   ////////////////   get a message template
 
-  async getMessages() {
+  async getMessages(number) {
     try {
-      const result = await this.axiosInstance.get(`/messages`);
+      const result = await this.axiosInstance.get(
+        `/messages?limit=${number}&offset=0`
+      );
       console.log(result);
       return result;
     } catch (err) {
@@ -175,9 +177,9 @@ class API {
 
   async deleteMessage(messageId) {
     try {
-     let result = await this.axiosInstance.delete(`/messages/${messageId}`);
-     console.log(result)
-     return result
+      let result = await this.axiosInstance.delete(`/messages/${messageId}`);
+      console.log(result);
+      return result;
     } catch (err) {
       helpMeInstructor(err);
       return err;

@@ -4,12 +4,15 @@ import "./Messages.css";
 import { Avatar, Box, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const Messages = (props) => {
+  const [numberOfMessages, setNumberOfMessages] = useState(25);
+  console.log({ props });
   useEffect(() => {
     console.log(props);
-    props.getMessagesList();
-  }, [props.messages.length, props.likes]);
+    props.getMessagesList(numberOfMessages);
+  }, [props.likes, numberOfMessages]);
 
   const removeLikeHandler = (messageId) => {
     let removedLike = props.likes.filter((like) => {
@@ -20,10 +23,16 @@ export const Messages = (props) => {
 
   const deleteMessageHandler = (id) => {
     props.deleteMessage(id);
+    setNumberOfMessages(numberOfMessages - 1);
+  };
+
+  const getMoreUsers = () => {
+    setNumberOfMessages(numberOfMessages + 25);
+    props.getMessagesList(numberOfMessages);
   };
 
   return (
-    <Grommet theme={grommet}>
+    <Grommet style={{ marginBottom: "50px" }} theme={grommet}>
       <Box
         border
         elevation="medium"
@@ -32,7 +41,7 @@ export const Messages = (props) => {
       >
         {props.messsages !== [] &&
           props.messages.map((message, index) => {
-            if (index < 100)
+            if (index < numberOfMessages)
               return (
                 <Box border elevation="medium" className="message">
                   <Avatar
@@ -83,7 +92,7 @@ export const Messages = (props) => {
                 </Box>
               );
           })}
-        <textarea rows="4" cols="20" />
+        <button onClick={getMoreUsers}>click for more users</button>
       </Box>
     </Grommet>
   );
