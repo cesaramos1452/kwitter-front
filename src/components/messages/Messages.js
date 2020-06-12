@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Messages.css";
 
 import { Avatar, Box, Grommet } from "grommet";
@@ -7,7 +7,7 @@ import { grommet } from "grommet/themes";
 export const Messages = (props) => {
   useEffect(() => {
     props.getMessagesList();
-  }, [props.likes.length]);
+  }, [props.messsages]);
 
   const removeLikeHandler = (messageId) => {
     let removedLike = props.likes.filter((like) => {

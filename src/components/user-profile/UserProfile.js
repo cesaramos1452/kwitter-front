@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
 import { Grommet, Header, Main, TextInput, Button } from "grommet";
 import { grommet } from "grommet/themes";
@@ -39,7 +39,7 @@ export const UserProfile = (props) => {
                       props.users.pictureLocation
                     : BlankProfile
                 }
-                alt="profile picture"
+                alt="profile-picture"
               />
               <form onSubmit={handleSubmit}>
                 <label>

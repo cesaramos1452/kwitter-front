@@ -11,6 +11,9 @@ import { Box, Button, Grommet, Form, FormField, TextInput } from "grommet";
 
 export const UserProfileUpdateForm = (props) => {
   console.log(props.users.pictureLocation);
+  let picture = props.users.pictureLocation;
+
+  const [choice, setChoice] = useState(false);
   const [input, setInput] = useState({
     displayName: "",
     about: "",
@@ -21,8 +24,8 @@ export const UserProfileUpdateForm = (props) => {
 
   useEffect(() => {
     props.getUser(props.profile);
-    console.log(props);
-  }, [props.users]);
+    picture = props.users.pictureLocation;
+  }, [choice]);
 
   const [reveal, setReveal] = useState(false);
 
@@ -49,13 +52,15 @@ export const UserProfileUpdateForm = (props) => {
     setInput((input) => ({ ...input, [inputName]: inputValue }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    props.putUserPicture({
+    await props.putUserPicture({
       username: props.profile,
       userPicture: formData,
     });
+    await setChoice(!choice);
+    await console.log(choice);
   };
 
   return (
@@ -64,13 +69,11 @@ export const UserProfileUpdateForm = (props) => {
         <img
           className="ProfileImg"
           src={
-            props.users.pictureLocation !== null
-              ? "https://kwitter-api.herokuapp.com/users/" +
-                props.username +
-                "/picture"
+            props.users !== undefined
+              ? "https://kwitter-api.herokuapp.com" + picture
               : BlankProfile
           }
-          alt={props.users.pictureLocation}
+          alt={picture}
         />
         <form onSubmit={handleSubmit}>
           <label>
