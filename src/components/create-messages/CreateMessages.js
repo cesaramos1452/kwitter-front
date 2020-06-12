@@ -1,36 +1,33 @@
-import React, {useState} from 'react';
-
+import React, { useState } from "react";
 
 const CreateMessages = (props) => {
-    console.log(props.messages.messages)
-    const [userMesssage, setUserMessage] = useState('')
+  const [userMesssage, setUserMessage] = useState("");
 
-    const setUserInput = (event) =>{
-        setUserMessage(event.target.value)
-        
-    }
+  const setUserInput = (event) => {
+    setUserMessage(event.target.value);
+  };
 
-    const clicker = (event) =>{
-        event.preventDefault()
-        if( userMesssage !== ''){
-        props.createMessage({text:userMesssage})
-        setUserMessage('')
-        }
+  const clicker = (event) => {
+    event.preventDefault();
+    if (userMesssage !== "") {
+      props.createMessage({ text: userMesssage });
+      setUserMessage("");
     }
-    return (
+  };
+  return (
+    <div>
+      <form onSubmit={clicker}>
         <div>
-            <form onSubmit={clicker}>
-                <div>
-                    <textarea 
-                    value={userMesssage}
-                    onChange={setUserInput}
-                    placeholder='Write Message Here'
-                    />
-                </div>
-                <button>Click</button>
-             </form>
+          <textarea
+            value={userMesssage}
+            onChange={setUserInput}
+            placeholder="Write Message Here"
+          />
         </div>
-    );
-}
+        <button>Click</button>
+      </form>
+    </div>
+  );
+};
 
 export default CreateMessages;
