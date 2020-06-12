@@ -6,10 +6,8 @@ import { Grommet, Main, Anchor } from "grommet";
 import { grommet } from "grommet/themes";
 
 export const UpdateProfileScreen = (props) => {
-  console.log(props);
   const { username } = props.match.params;
 
-  console.log(username);
   return (
     <Grommet theme={grommet}>
       <MenuContainer />

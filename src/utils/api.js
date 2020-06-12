@@ -33,7 +33,6 @@ class API {
     );
 
     this.axiosInstance = axiosInstance;
-    console.log(axiosInstance);
   }
 
   ////////////////   Create a new user template
@@ -107,13 +106,11 @@ class API {
   }
   ////////////////   update a user template
   async updateUser(user) {
-    console.log(user);
     try {
       const result = await this.axiosInstance.patch(
         `/users/${user.username}`,
         user.requestBody
       );
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -122,7 +119,6 @@ class API {
   }
 
   async getUserPicture(username) {
-    console.log(username);
     try {
       await this.axiosInstance.get(`/users/${username}/picture`);
       return true;
@@ -133,16 +129,13 @@ class API {
   }
 
   async putUserPicture({ userPicture, username }) {
-    console.log(userPicture, username);
     try {
       const result = await this.axiosInstance.put(
         `/users/${username}/picture`,
         userPicture
       );
-      console.log(result);
       return result;
     } catch (err) {
-      console.log(err);
       helpMeInstructor(err);
     }
   }
@@ -152,7 +145,6 @@ class API {
   async createMessage(text) {
     try {
       const result = await this.axiosInstance.post("/messages", text);
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -167,7 +159,6 @@ class API {
       const result = await this.axiosInstance.get(
         `/messages?limit=${number}&offset=0`
       );
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -180,7 +171,6 @@ class API {
   async deleteMessage(messageId) {
     try {
       let result = await this.axiosInstance.delete(`/messages/${messageId}`);
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);

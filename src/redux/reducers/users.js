@@ -24,7 +24,6 @@ const INITIAL_STATE = {
 };
 
 export const usersReducer = (state = INITIAL_STATE, action) => {
-  console.log("this is the action", { action });
   switch (action.type) {
     case GET_USER: {
       const {
@@ -72,7 +71,6 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
       return { ...state, deletedUser };
     }
     case GET_USER_PICTURE: {
-      console.log(action.payload);
       return { ...state, displayPhoto: action.payload };
     }
     case PUT_USER_PICTURE: {
