@@ -2,8 +2,6 @@ In all areas where grommet component is imported the css from v2.grommet.io
 was used. Areas where there is a style sheet and styling on that sheet was
 our own work.
 
-
-
 ## Overview
 
 You will be working in teams to make a clone of a common micro-blogging platform. You will be given a back-end API for you to form your front-end application around.
@@ -53,3 +51,17 @@ An overview of the starting scaffolding architecture can be found in `./dependen
 2. Scrum board - this shows your scrum board which has tickets with descriptions and assignees. it could be a trello board or a gitlab/github project board or similar.
 3. Retrospective board or notes - show that your team discussed how to improve its process through notes about what went well/what went poorly/action items.
    It could be general notes or a funretro.io board.
+
+## Team Retrospective
+
+Vince Newsom:
+
+Looking back it seemed to take more time than just two week to write the code, but in fact it wasn't until last Tuesday 6/9/20 that we really started pushing a long with lots of code, hitting the endpoints and having a somewhat functional viable product. It was not to say we weren't working the first week we got the assignment. Veronica set up the trello board the day the assignment came out. We were messaging in slack the day the assigmnet came out. We were looking at the Swagger Docs BEFORE the assignment came out. But the bulk of our time the first week, unbeknowst to us, would be spent planning, how to plan and what to plan. This was more important that what I thought it would be, and I like to plan!
+
+If I were to do it again, or take on another project of this size, I would first ask the team to make a template in html. The benefit we had once able to see what we were going to build was enormous and cannot be understated. This was a one of a few catalysts in the project that really sent us to our computers and actually write the code! Another important thing I would do to improve productivity would be for everyone to review the API documentation seperately and then together to not just better understand it more quickly, but to ensure everyone understood it as well as it needed to be. There was much in the documentation that we were confused by. For example we didnt know that we had to put the whole pictureLocation URL as the source and not the payload that was recieved from the API call. Or how to understand how to even use the documentations (.ie when the token was required, switching the production environment and logging into the doc).
+
+Another huge learning was around Git and GitLab, when to pull/push/make branches and the system we needed to effectively merge requests. I believe we maintained a high level of self-accountability her. While there were merge conflicts it was not because someone pushed to the paster without requesting a merge. If we were to do this again I think it would be important to establish norms of when and how to push.
+
+Lastly, due to the premature understanding of Kwitter when we began I think the tickets were not broken down as effectively as they could've. We did have a good understanding through out Slack/Trello communication, but the tickets, in retrospect were too broad.
+
+Overall the project was fun and challenging. I feel more confident in my ability to read documentations, plan, code and perservere. I share emmense thanks to Veronica Fuentes and Cesar Ramos for their dedication and hardwork, this project would not be a quarter of polished if it weren't for them!
