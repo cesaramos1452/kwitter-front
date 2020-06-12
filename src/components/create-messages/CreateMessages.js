@@ -21,7 +21,9 @@ const CreateMessages = (props) => {
           <textarea
             value={userMesssage}
             onChange={setUserInput}
-            placeholder="Write Message Here"
+            placeholder="How sweet are you today?"
+            cols="36"
+            rows="3"
           />
         </div>
         <button>Click</button>
