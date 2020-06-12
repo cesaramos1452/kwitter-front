@@ -40,53 +40,10 @@ export const UserProfileUpdateForm = (props) => {
   };
 
   return (
-    <Grommet full theme={grommet} style={{ height: "47vh" }}>
-{/* ////////////vero's changes
-        <Form className="updateForm" id="update-form" onSubmit={clickHandler}>
-        <Box className="updateTextArea" direction="row" align="center" round="small">
-      <TextInput 
-        type="text"
-        name="displayName"
-        value={input.displayName}
-        onChange={changeHandler}
-        placeholder={props.users.displayName}
-      />
-      </Box>
-      <Box className="updateTextArea" direction="row" align="center" round="small">
-      <TextInput 
-        type="text"
-        name="about"
-        value={input.about}
-        onChange={changeHandler}
-        placeholder={props.users.about === "" ? "add a bio" : props.users.about}
-      />
-      </Box>
-      <Box className="updateTextArea" direction="row" align="center" round="small">
-      <TextInput
-        type="text"
-        name="password"
-        value={input.password}
-        onChange={changeHandler}
-        placeholder="enter password"
-      />
-      <Button
-        icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
-        onClick={() => setReveal(!reveal)}
-      />
-      </Box>
-
-      
-      <Box direction="row" justify="between" margin={{ top: "medium" }}>
-      <Button
-        type="submit"
-        label="Save Changes"
-        primary
-      />
-        </Box>
-        </Form> */}
-      <Box fill align="center" justify="center">
-        <Box align="center">
-          <Box direction="row" align="center" round="small">
+    <Grommet full theme={grommet}>
+ <Box fill align="baseline" >
+<Form className="updateForm" onSubmit={clickHandler}>
+            <Box className="textField" direction="row" align="center" round="small" border>
             <TextInput
               type="text"
               name="displayName"
@@ -94,7 +51,9 @@ export const UserProfileUpdateForm = (props) => {
               onChange={changeHandler}
               placeholder={props.users.displayName}
             />
-            <TextInput
+             </Box>
+             <Box className="textField" direction="row" align="center" round="small" border>
+             <TextInput
               type="text"
               name="about"
               value={input.about}
@@ -103,21 +62,40 @@ export const UserProfileUpdateForm = (props) => {
                 props.users.about === "" ? "add a bio" : props.users.about
               }
             />
-            <TextInput
-              type="text"
+             </Box>
+             <Box className="textField" direction="row" align="center" round="small" border>
+             <TextInput
+              type={reveal ? "text" : "password"}
               name="password"
+              required
               value={input.password}
               onChange={changeHandler}
-              placeholder="enter password"
+              placeholder="enter password to commit changes"
             />
+              <Button
+                icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
+                onClick={() => setReveal(!reveal)}
+              />
+            </Box>
+            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+            <Link to={`/profiles/${props.username}`}>
+                <Button
+                  label="Save Changes"
+                  primary
+                  type="submit"
+                  onClick={clickHandler}
+                />
+              </Link>
+              <Link to={`/`}>
+                <Button 
+                  secondary
+                  label="DELETE ACCOUNT"
+                  onClick={handleDeleteUser}
+                  color="red"
+                />
+              </Link>
           </Box>
-          <Box direction="row" justify="between" margin={{ top: "medium" }}>
-            <button onClick={clickHandler}>Save Changes</button>
-            <Link to={`/`}>
-              <button onClick={handleDeleteUser}>DELETE USER PROFILE</button>
-            </Link>
-          </Box>
-        </Box>
+          </Form>
       </Box>
     </Grommet>
   );
