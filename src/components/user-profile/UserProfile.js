@@ -55,9 +55,9 @@ export const UserProfile = (props) => {
               </form>
             </div>
             <div>
-              <p>{props.users.displayName}</p>
-              <h3>{props.users.username}</h3>
-              <p>About: {props.users.about}</p>
+              <h3>{props.users.displayName}</h3>
+              <p>{props.users.username}</p>
+              <p>About Me: {props.users.about}</p>
               <p>Last Update: {props.users.updatedAt}</p>
               <p>Created Profile: {props.users.createdAt}</p>
               {/* TODO: conditional render if updating is true or false */}

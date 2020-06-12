@@ -43,7 +43,7 @@ export const UserProfileUpdateForm = (props) => {
     <Grommet full theme={grommet}>
  <Box fill align="baseline" >
 <Form className="updateForm" onSubmit={clickHandler}>
-            <FormField  round="small" border>
+            <Box className="textField" direction="row" align="center" round="small" border>
             <TextInput
               type="text"
               name="displayName"
@@ -51,8 +51,8 @@ export const UserProfileUpdateForm = (props) => {
               onChange={changeHandler}
               placeholder={props.users.displayName}
             />
-             </FormField>
-             <FormField round="small" border>
+             </Box>
+             <Box className="textField" direction="row" align="center" round="small" border>
              <TextInput
               type="text"
               name="about"
@@ -62,8 +62,8 @@ export const UserProfileUpdateForm = (props) => {
                 props.users.about === "" ? "add a bio" : props.users.about
               }
             />
-             </FormField>
-             <Box className="passBox" direction="row" align="center" round="small" border>
+             </Box>
+             <Box className="textField" direction="row" align="center" round="small" border>
              <TextInput
               type={reveal ? "text" : "password"}
               name="password"
@@ -87,10 +87,11 @@ export const UserProfileUpdateForm = (props) => {
                 />
               </Link>
               <Link to={`/`}>
-                <Button
+                <Button 
+                  secondary
                   label="DELETE ACCOUNT"
-                  primary
                   onClick={handleDeleteUser}
+                  color="red"
                 />
               </Link>
           </Box>
