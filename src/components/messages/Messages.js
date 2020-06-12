@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 export const Messages = (props) => {
   useEffect(() => {
     props.getMessagesList();
-    console.log(props);
   }, [props.messages.length, props.likes]);
 
   const removeLikeHandler = (messageId) => {
