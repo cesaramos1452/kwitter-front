@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BlankProfile from "../images/blank-profile.png";
 import "./ListOfUsers.css";
 
-import { Avatar, Box, Grommet } from "grommet";
+import { Avatar, Box, Grommet, Button } from "grommet";
 import { grommet } from "grommet/themes";
 import { useState } from "react";
 
@@ -51,9 +51,13 @@ export const ListOfUsers = (props) => {
               );
           })}
         {displayUsers !== 0 && (
-          <button onClick={displayPreviousUsers}>previous 10 users</button>
+          <Button onClick={displayPreviousUsers} label="previous 10 users" />
         )}
-        <button onClick={displayNextUsers}>next 10 users</button>
+        <Button
+          style={{ marginTop: "10px" }}
+          onClick={displayNextUsers}
+          label="next 10 users"
+        />
       </Box>
     </Grommet>
   );
