@@ -16,5 +16,9 @@
     min-width: 85%;
     justify-content: space-around;
     flex-wrap: wrap;
-    
+  }
+
+  .textField {
+      padding: .5em;
+      margin: .5em;
   }
