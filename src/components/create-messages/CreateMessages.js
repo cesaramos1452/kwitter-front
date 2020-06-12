@@ -29,7 +29,12 @@ const CreateMessages = (props) => {
             rows="3"
           />
         </Box>
-        <Button margin="0 0 0 10px" justify="end" label="Drop a sweet!" />
+        <Button
+          type="submit"
+          margin="0 0 0 10px"
+          justify="end"
+          label="Drop a sweet!"
+        />
       </form>
     </div>
   );
