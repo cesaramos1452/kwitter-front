@@ -12,19 +12,7 @@ export const UserProfile = (props) => {
   useEffect(() => {
     props.getUser(props.profile);
     console.log(props);
-  }, [props.users.pictureLocation]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target);
-    const formData = new FormData(e.target);
-    console.log(formData);
-    props.putUserPicture({
-      username: props.profile,
-      userPicture: formData,
-    });
-  };
-
+  }, []);
   return (
     <Grommet theme={grommet}>
       <Main margin="medium" pad="small">
@@ -41,13 +29,13 @@ export const UserProfile = (props) => {
                 }
                 alt="profile-picture"
               />
-              <form onSubmit={handleSubmit}>
+              {/* <form onSubmit={handleSubmit}>
                 <label>
                   <TextInput type="file" ref={fileInput} name="picture" />
                 </label>
                 <br />
                 <Button type="submit" label="Upload" primary />
-              </form>
+              </form> */}
             </div>
             <div>
               <h3>{props.users.displayName}</h3>
