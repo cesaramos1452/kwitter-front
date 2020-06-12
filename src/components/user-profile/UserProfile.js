@@ -3,7 +3,6 @@ import BlankProfile from "../images/blank-profile.png";
 import { Grommet, Header, Main, TextInput, Button } from "grommet";
 import { grommet } from "grommet/themes";
 import "./UserProfile.css";
-import ImageUploader from "react-images-upload";
 import FormData from "form-data";
 
 export const UserProfile = (props) => {

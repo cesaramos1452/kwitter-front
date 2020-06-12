@@ -75,6 +75,7 @@ export const getUserPicture = (username) => async (dispatch, getState) => {
 export const putUserPicture = (user) => async (dispatch, getState) => {
   try {
     const payload = await api.putUserPicture(user);
+    console.log(payload);
     dispatch({ type: PUT_USER_PICTURE, payload });
   } catch (err) {
     console.log(err);

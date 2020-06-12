@@ -5,18 +5,14 @@ import { Avatar, Box, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
 
 export const Messages = (props) => {
-  console.log(props);
-
   useEffect(() => {
     props.getMessagesList();
   }, [props.likes.length]);
 
   const removeLikeHandler = (messageId) => {
-    console.log(props.likes);
     let removedLike = props.likes.filter((like) => {
       if (like !== null) return like.messageId === messageId;
     });
-    console.log(removedLike[0]);
     props.removeLike(removedLike[0].id);
   };
 
