@@ -3,11 +3,13 @@ import "./Messages.css";
 
 import { Avatar, Box, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
+import { Link } from "react-router-dom";
 
 export const Messages = (props) => {
   useEffect(() => {
     props.getMessagesList();
-  }, [props.messsages]);
+    console.log(props);
+  }, [props.messages.length, props.likes]);
 
   const removeLikeHandler = (messageId) => {
     let removedLike = props.likes.filter((like) => {
@@ -22,7 +24,7 @@ export const Messages = (props) => {
         border
         elevation="medium"
         className="messagesList"
-        style={{maxWidth:"610px",marginTop:"30px" }}
+        style={{ maxWidth: "610px", marginTop: "30px" }}
       >
         {props.messsages !== [] &&
           props.messages.map((message, index) => {
@@ -36,7 +38,12 @@ export const Messages = (props) => {
                       "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
                     }
                   />
-                  <div>{message.username}</div>
+                  <Link
+                    key={message.username + Math.random()}
+                    to={`/profiles/${message.username}`}
+                  >
+                    {message.username}
+                  </Link>
                   <div>
                     {message.text}
                     <div>
