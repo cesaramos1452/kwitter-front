@@ -1,43 +1,47 @@
 .AvatarImg {
-    height: 17em;
-    width: 17em;
-    border-radius: 25%;
-    margin: 0px 22px 0px 0px;
+  height: 17em;
+  width: 17em;
+  border-radius: 25%;
+  margin: 0px 22px 10px 25px;
 }
 
 .boxhead a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .messagesList {
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    min-width: 25%;
-    max-width: 25%;
-    margin: 10px;
-    margin-top:"30px";
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  min-width: 25%;
+  max-width: 25%;
+  margin: 10px;
+  margin-top: "30px";
+  padding: 10px;
 }
 
 .message {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    padding: 22px;
-    background-color: #f8f8f8;
-    border-radius: 25px;
-    margin: 10px;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  padding: 22px;
+  background-color: #f8f8f8;
+  border-radius: 25px;
+  margin: 10px;
 }
 
 .messageContent {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .delete {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sweetnessFactor {
+  margin: 25px;
 }

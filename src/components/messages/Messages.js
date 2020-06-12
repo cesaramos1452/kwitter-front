@@ -56,78 +56,68 @@ export const Messages = (props) => {
                 className="message"
                 key={item.username + Math.random()}
               >
-                <Box justify="between" direction="row-responsive" >
-                <Avatar
-                  onError={BlankProfile}
-                  className="AvatarImg"
-                  src={
-                    `https://kwitter-api.herokuapp.com/users/${item.username}/picture` !==
-                    { message: "User does not have a picture", statusCode: 404 }
-                      ? `https://kwitter-api.herokuapp.com/users/${item.username}/picture`
-                      : `${BlankProfile}`
-                  }
-                />
-                
-                    
-                <Link to={`/profiles/${item.username}`}>{item.username}</Link>
-                
-                  {item.text}
-                  <div>
-                    Sweetness {item.likes.length}
+                <Box justify="between" direction="row-responsive">
+                  <Avatar
+                    onError={BlankProfile}
+                    className="AvatarImg"
+                    src={
+                      `https://kwitter-api.herokuapp.com/users/${item.username}/picture` !==
+                      {
+                        message: "User does not have a picture",
+                        statusCode: 404,
+                      }
+                        ? `https://kwitter-api.herokuapp.com/users/${item.username}/picture`
+                        : `${BlankProfile}`
+                    }
+                  />
+
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/profiles/${item.username}`}
+                  >
+                    {item.username}
+                  </Link>
+
+                  <Button
+                    justify="end"
+                    onClick={() => deleteMessageHandler(item.id)}
+                    icon={<Close size="small" color="red" />}
+                    secondary
+                    style={{ marginTop: "-40px", marginRight: "-15px" }}
+                  />
+                </Box>
+                <div className="messageContent" style={{ maxWidth: "500px" }}>
+                  <div className="textItem" style={{ marginLeft: "26px" }}>
+                    {item.text}
                   </div>
-                  <Button 
-                      justify="end"
-                      onClick={() => deleteMessageHandler(item.id)}
-                      icon={<Close />}
-                      secondary
-                      color="red"
-                    />
-                  </Box>
-                  <div className="messageContent" style={{ maxWidth: "500px" }}>
-                  <div className="theButtons" >
+                  <Box alignSelf="end" className="theButtons" direction="row">
+                    <div className="sweetnessFactor">
+                      Sweetness {item.likes.length}
+                    </div>
+
                     {item.likes.every((likedObj) =>
                       props.likes.every((likes) => {
                         if (likes !== null) return likedObj.id !== likes.id;
                       })
                     ) ? (
                       <Button
-                        margin="20px"
+                        margin="0 20px 20px 20px"
                         icon={<Avatar src={LikeImg} round="small" />}
                         onClick={() => props.addLike({ messageId: item.id })}
                         primary
                         color="white"
                       />
-                      // <button
-                      //   onClick={() => props.addLike({ messageId: item.id })}
-                      // >
-                      //   <Avatar
-                      //     className="likeImg"
-                      //     src={LikeImg}
-                      //   />
-                      //   Sweet
-                      // </button>
                     ) : (
                       <Button
-                        margin="20px"
+                        margin="0 20px 20px 20px"
                         size="small"
                         icon={<Avatar src={DislikeImg} round="small" />}
                         onClick={() => removeLikeHandler(item.id)}
                         primary
                         color="white"
                       />
-                      // <button onClick={() => removeLikeHandler(item.id)}>
-                      //   <Avatar
-                      //     className="likeImg"
-                      //     src={DislikeImg}
-                      //   />
-                      //   Sour
-                      // </button>
                     )}
-                    
-                    {/* <button onClick={() => deleteMessageHandler(item.id)}>
-                      Delete
-                    </button> */}
-                  </div>
+                  </Box>
                 </div>
               </Box>
             )}

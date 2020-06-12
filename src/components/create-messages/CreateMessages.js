@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import { Button, TextArea, Box } from "grommet";
+import { grommet } from "grommet/themes";
+
 const CreateMessages = (props) => {
   const [userMesssage, setUserMessage] = useState("");
 
@@ -17,16 +20,16 @@ const CreateMessages = (props) => {
   return (
     <div>
       <form onSubmit={clicker}>
-        <div>
-          <textarea
+        <Box elevation="medium" margin=" 10px">
+          <TextArea
             value={userMesssage}
             onChange={setUserInput}
             placeholder="How sweet are you today?"
             cols="36"
             rows="3"
           />
-        </div>
-        <button>Drop a sweet!</button>
+        </Box>
+        <Button margin="0 0 0 10px" justify="end" label="Drop a sweet!" />
       </form>
     </div>
   );
