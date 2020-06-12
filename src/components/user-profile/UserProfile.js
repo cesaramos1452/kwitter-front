@@ -5,12 +5,8 @@ import { grommet } from "grommet/themes";
 import "./UserProfile.css";
 
 export const UserProfile = (props) => {
-  console.log({ props });
-
   useEffect(() => {
-    console.log(props);
     props.getUser(props.profile);
-    console.log(props);
   }, [props.profile]);
   return (
     <Grommet theme={grommet}>
