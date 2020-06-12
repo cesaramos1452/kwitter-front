@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
+import LikeImg from "../images/likeCandy.png";
+import DislikeImg from "../images/dislikeCandy.png";
 import "./Messages.css";
 
-import { Avatar, Box, Grommet, InfiniteScroll } from "grommet";
+import { Avatar, Box, Button, Grommet, InfiniteScroll } from "grommet";
 import { grommet } from "grommet/themes";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Dislike, Close } from "grommet-icons";
 
 export const Messages = (props) => {
   const [numberOfMessagesDisplayed, setNumberOfMessagesDisplayed] = useState(
@@ -53,6 +56,7 @@ export const Messages = (props) => {
                 className="message"
                 key={item.username + Math.random()}
               >
+                <Box justify="between" direction="row-responsive" >
                 <Avatar
                   onError={BlankProfile}
                   className="AvatarImg"
@@ -63,36 +67,72 @@ export const Messages = (props) => {
                       : `${BlankProfile}`
                   }
                 />
+                
+                    
                 <Link to={`/profiles/${item.username}`}>{item.username}</Link>
-                <div style={{ maxWidth: "500px" }}>
+                
                   {item.text}
                   <div>
-                    Likes {item.likes.length}
+                    Sweetness {item.likes.length}
+                  </div>
+                  <Button 
+                      justify="end"
+                      onClick={() => deleteMessageHandler(item.id)}
+                      icon={<Close />}
+                      secondary
+                      color="red"
+                    />
+                  </Box>
+                  <div className="messageContent" style={{ maxWidth: "500px" }}>
+                  <div className="theButtons" >
                     {item.likes.every((likedObj) =>
                       props.likes.every((likes) => {
                         if (likes !== null) return likedObj.id !== likes.id;
                       })
                     ) ? (
-                      <button
+                      <Button
+                        margin="20px"
+                        icon={<Avatar src={LikeImg} round="small" />}
                         onClick={() => props.addLike({ messageId: item.id })}
-                      >
-                        Pop this CandyGram
-                      </button>
+                        primary
+                        color="white"
+                      />
+                      // <button
+                      //   onClick={() => props.addLike({ messageId: item.id })}
+                      // >
+                      //   <Avatar
+                      //     className="likeImg"
+                      //     src={LikeImg}
+                      //   />
+                      //   Sweet
+                      // </button>
                     ) : (
-                      <button onClick={() => removeLikeHandler(item.id)}>
-                        Drop this CandyGram
-                      </button>
+                      <Button
+                        margin="20px"
+                        size="small"
+                        icon={<Avatar src={DislikeImg} round="small" />}
+                        onClick={() => removeLikeHandler(item.id)}
+                        primary
+                        color="white"
+                      />
+                      // <button onClick={() => removeLikeHandler(item.id)}>
+                      //   <Avatar
+                      //     className="likeImg"
+                      //     src={DislikeImg}
+                      //   />
+                      //   Sour
+                      // </button>
                     )}
-                    <button onClick={() => deleteMessageHandler(item.id)}>
+                    
+                    {/* <button onClick={() => deleteMessageHandler(item.id)}>
                       Delete
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </Box>
             )}
           </InfiniteScroll>
         )}
-        <button onClick={getMoreUsers}>click for more users</button>
       </Box>
     </Grommet>
   );
