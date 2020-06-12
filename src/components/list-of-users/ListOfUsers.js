@@ -12,7 +12,7 @@ export const ListOfUsers = (props) => {
   }, []);
   return (
     <Grommet theme={grommet}>
-        <Box border className="userList">
+        <Box border background={{ color:"theme", opacity: true }} idName25038="userList">
         
           {props.users.length !== 0 &&
             props.users.map((user) => (

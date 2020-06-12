@@ -12,15 +12,14 @@ export const Messages = (props) => {
 
   return (
     <Grommet theme={grommet}>
-      <Box border className="messagesList">
+      <Box border pad="medium" elevation="medium" className="messagesList" style={{maxWidth:"710px"} } >
         {props.messsages !== [] &&
           props.messages.map((message) => (
-            <li className="message">
+            <Box border pad="medium" elevation="medium" className="message">
             <Avatar className="AvatarImg" src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
             {message.username}
             {message.text} 
-            
-            </li>
+            </Box>
         ))}
       <textarea rows="4" cols="20" />
       
