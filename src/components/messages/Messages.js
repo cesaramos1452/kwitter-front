@@ -31,6 +31,11 @@ export const Messages = (props) => {
     props.getMessagesList(numberOfMessagesDisplayed + 100);
   };
 
+  const determineIfPictureIsUploaded = (username) => {
+    //fetch user
+    //if user .pictureloaction !== null
+  };
+
   return (
     <Grommet style={{ marginBottom: "50px" }} theme={grommet}>
       <Box
@@ -55,6 +60,7 @@ export const Messages = (props) => {
                 <Avatar
                   className="AvatarImg"
                   src={
+                    // fetch the users photo if null retrun the second image
                     `https://kwitter-api.herokuapp.com/users/${item.username}/picture` ||
                     "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
                   }
