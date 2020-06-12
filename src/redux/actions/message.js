@@ -7,7 +7,7 @@ export const DELETE_MESSAGE = "DELETE_MESSAGE";
 
 export const getMessagesList = () => async (dispatch, getState) => {
   try {
-    const payload = await api.getMessagesList();
+    const payload = await api.getMessages();
     console.log(payload);
     dispatch({ type: GET_LIST_MESSAGES, payload });
   } catch (err) {
