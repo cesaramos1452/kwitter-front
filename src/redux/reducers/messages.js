@@ -23,13 +23,13 @@ export const messageReducer = (state = INITIAL_STATE, action) => {
       };
     }
     case DELETE_MESSAGE:
+      console.log(action.payload);
       const { messageId } = action.payload;
       return {
         ...state,
-        messages: state.messages.messages.filter(
-          (message) => message.id !== messageId
-        ),
+        messages: state.messages.filter((message) => message.id !== messageId),
       };
+
     default:
       return state;
   }
