@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ListOfUsers.css";
 
-import { Avatar, Box, List, Grommet } from "grommet";
+import { Avatar, Box, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
 
 export const ListOfUsers = (props) => {

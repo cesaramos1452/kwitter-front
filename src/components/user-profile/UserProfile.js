@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
-import { Grommet, Header, Main, Text, Button } from "grommet";
+import { Grommet, Header, Main, TextInput, Button } from "grommet";
 import { grommet } from "grommet/themes";
 import "./UserProfile.css";
 import ImageUploader from "react-images-upload";
@@ -42,15 +42,16 @@ export const UserProfile = (props) => {
                 }
                 alt="profile picture"
               />
-
-              <label htmlFor="fileElem">Select some files</label>
               <form onSubmit={handleSubmit}>
                 <label>
-                  Upload file:
-                  <input type="file" ref={fileInput} name="picture" />
+                  <TextInput type="file" ref={fileInput} name="picture" />
                 </label>
                 <br />
-                <button type="submit">Submit</button>
+                <Button
+                  type="submit"
+                  label="Upload"
+                  primary
+              />
               </form>
             </div>
             <div>

@@ -9,10 +9,6 @@
     text-decoration: none;
 }
 
-.messages {
-    display: flex;
-}
-
 .userList {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,29 @@
+.AvatarImg {
+    height: 17em;
+    width: 17em;
+    border-radius: 25%;
+    margin: 0px 22px 0px 0px;
+}
+
+.boxhead a {
+    text-decoration: none;
+}
+
+.messagesList {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    min-width: 33%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.message {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    padding: 22px;
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    margin: 10px;
+}
