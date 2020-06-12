@@ -34,9 +34,9 @@ export const updateUser = (user) => async (dispatch, getState) => {
   }
 };
 
-export const getUserList = () => async (dispatch, getState) => {
+export const getUserList = (number) => async (dispatch, getState) => {
   try {
-    const payload = await api.getUserList();
+    const payload = await api.getUserList(number);
     dispatch({ type: GET_USER_LIST, payload });
   } catch (err) {
     console.log(err);

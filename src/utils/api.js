@@ -94,9 +94,11 @@ class API {
   }
 
   ////////////////   update a get user list template
-  async getUserList() {
+  async getUserList(number) {
     try {
-      const result = await this.axiosInstance.get(`/users`);
+      const result = await this.axiosInstance.get(
+        `/users?limit=${number}&offset=0`
+      );
       return result;
     } catch (err) {
       helpMeInstructor(err);

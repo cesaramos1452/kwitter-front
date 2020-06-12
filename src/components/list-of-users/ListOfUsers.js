@@ -4,40 +4,61 @@ import "./ListOfUsers.css";
 
 import { Avatar, Box, Grommet } from "grommet";
 import { grommet } from "grommet/themes";
+import { useState } from "react";
 
 export const ListOfUsers = (props) => {
+  const [displayUsers, setDisplayUsers] = useState(0);
   useEffect(() => {
-    // props.getUserList();
-  }, []);
+    if (displayUsers % 100 === 0) props.getUserList(displayUsers + 100);
+  }, [displayUsers]);
+  const displayPreviousUsers = () => {
+    setDisplayUsers(displayUsers - 10);
+  };
+  const displayNextUsers = () => {
+    setDisplayUsers(displayUsers + 10);
+  };
+
   return (
     <Grommet theme={grommet}>
-      <Box 
-          border
-          className="userList"
-          elevation="medium" 
-          background={{ color:"theme", opacity: true }}
-          style={{maxWidth:"350px"}, {minWidth:"250px"}}
-        >
+      <Box
+        border
+        className="userList"
+        elevation="medium"
+        background={{ color: "theme", opacity: true }}
+        style={({ maxWidth: "350px" }, { minWidth: "250px" })}
+      >
         {props.users.length !== 0 &&
-          props.users.map((user) => (
-            <li className="user">
-              <Avatar
-                className="AvatarImg"
-                src={`https://kwitter-api.herokuapp.com/users/${user.username}/picture`}
-              />
-              <Link
-                key={user.username + Math.random()}
-                to={`/profiles/${user.username}`}
-              >
-                {user.username}
-              </Link>
-            </li>
+          props.users.map((user, index) => {
+            if (displayUsers <= index && index < displayUsers + 10)
+              return (
+                <li className="user">
+                  <Avatar
+                    className="AvatarImg"
+                    src={
+                      user.pictureLocation !== null
+                        ? `https://kwitter-api.herokuapp.com/users/${user.username}/picture`
+                        : "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
+                    }
+                  />
+                  <Link
+                    key={user.username + Math.random()}
+                    to={`/profiles/${user.username}`}
+                  >
+                    {user.username}
+                  </Link>
+                </li>
+              );
+
             // <li className="user" >
             //   <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
             //   {/* <Avatar src={${user.picture}}/> */}
             //   <Link to={`/profiles/${user.username}`}>{user.username}</Link>
             // </li>
-          ))}
+          })}
+        {displayUsers !== 0 && (
+          <button onClick={displayPreviousUsers}>previous 10 users</button>
+        )}
+        <button onClick={displayNextUsers}>next 10 users</button>
       </Box>
     </Grommet>
   );

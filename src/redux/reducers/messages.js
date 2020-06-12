@@ -5,6 +5,7 @@ import { message } from "antd";
 
 const INITIAL_STATE = {
   messages: [],
+  userMessages: [],
 };
 
 export const messageReducer = (state = INITIAL_STATE, action) => {
@@ -22,6 +23,7 @@ export const messageReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         messages: [...state.messages, message],
+        userMessages: message,
       };
     }
     case DELETE_MESSAGE:

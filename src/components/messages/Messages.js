@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const Messages = (props) => {
-  const [numberOfMessages, setNumberOfMessages] = useState(25);
+  const [numberOfMessagesDisplayed, setNumberOfMessagesDisplayed] = useState(
+    25
+  );
   console.log({ props });
   useEffect(() => {
     console.log(props);
-    props.getMessagesList(numberOfMessages);
-  }, [props.likes, numberOfMessages]);
+    props.getMessagesList(numberOfMessagesDisplayed);
+  }, [props.likes, numberOfMessagesDisplayed, props.userMessages]);
 
   const removeLikeHandler = (messageId) => {
     let removedLike = props.likes.filter((like) => {
@@ -23,12 +25,12 @@ export const Messages = (props) => {
 
   const deleteMessageHandler = (id) => {
     props.deleteMessage(id);
-    setNumberOfMessages(numberOfMessages - 1);
+    setNumberOfMessagesDisplayed(numberOfMessagesDisplayed - 1);
   };
 
   const getMoreUsers = () => {
-    setNumberOfMessages(numberOfMessages + 25);
-    props.getMessagesList(numberOfMessages);
+    setNumberOfMessagesDisplayed(numberOfMessagesDisplayed + 25);
+    props.getMessagesList(numberOfMessagesDisplayed);
   };
 
   return (
@@ -41,7 +43,7 @@ export const Messages = (props) => {
       >
         {props.messsages !== [] &&
           props.messages.map((message, index) => {
-            if (index < numberOfMessages)
+            if (index < numberOfMessagesDisplayed)
               return (
                 <Box border elevation="medium" className="message">
                   <Avatar
