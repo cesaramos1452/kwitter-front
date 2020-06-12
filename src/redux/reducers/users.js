@@ -20,6 +20,7 @@ const INITIAL_STATE = {
   updatedAt: "",
   pictureLocation: null,
   googleId: null,
+  displayPhoto: false,
 };
 
 export const usersReducer = (state = INITIAL_STATE, action) => {
@@ -36,7 +37,7 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         googleId,
       } = action.payload.user;
       return {
-        ...INITIAL_STATE,
+        ...state,
         username,
         displayName,
         about,
@@ -50,35 +51,33 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
       const { displayName, about, updatedAt } = action.payload.user;
 
       return {
-        ...INITIAL_STATE,
+        ...state,
         updatedAt,
         about,
         displayName,
       };
     }
     case GET_USER_LIST: {
-      console.log(action.payload);
       const { users } = action.payload; //TODO
       return {
-        ...INITIAL_STATE,
+        ...state,
         users,
       };
     }
     case CREATE_NEW_USER: {
-      return { ...INITIAL_STATE };
+      return { ...state };
     }
     case DELETE_USER: {
       const { deletedUser } = action.payload;
-      return { ...INITIAL_STATE, deletedUser };
+      return { ...state, deletedUser };
     }
     case GET_USER_PICTURE: {
-      const { pictureLocation } = action.payload;
-      console.log(pictureLocation);
-      return { ...INITIAL_STATE, pictureLocation };
+      console.log(action.payload);
+      return { ...state, displayPhoto: action.payload };
     }
     case PUT_USER_PICTURE: {
       const { pictureLocation } = action.payload;
-      return { ...INITIAL_STATE, pictureLocation };
+      return { ...state, pictureLocation };
     }
     default:
       return state;
