@@ -122,7 +122,7 @@ class API {
   async getUserPicture(username) {
     console.log(username);
     try {
-      const result = await this.axiosInstance.get(`/users/${username}/picture`);
+      await this.axiosInstance.get(`/users/${username}/picture`);
       return true;
     } catch (err) {
       helpMeInstructor(err);

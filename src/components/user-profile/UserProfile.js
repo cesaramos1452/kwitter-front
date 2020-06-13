@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
 import { Grommet, Header, Main, TextInput, Button } from "grommet";
 import { grommet } from "grommet/themes";
 import "./UserProfile.css";
-import ImageUploader from "react-images-upload";
 import FormData from "form-data";
 
 export const UserProfile = (props) => {
@@ -13,19 +12,7 @@ export const UserProfile = (props) => {
   useEffect(() => {
     props.getUser(props.profile);
     console.log(props);
-  }, [props.users.pictureLocation]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target);
-    const formData = new FormData(e.target);
-    console.log(formData);
-    props.putUserPicture({
-      username: props.profile,
-      userPicture: formData,
-    });
-  };
-
+  }, []);
   return (
     <Grommet theme={grommet}>
       <Main margin="medium" pad="small">
@@ -40,15 +27,15 @@ export const UserProfile = (props) => {
                       props.users.pictureLocation
                     : BlankProfile
                 }
-                alt="profile picture"
+                alt="profile-picture"
               />
-              <form onSubmit={handleSubmit}>
+              {/* <form onSubmit={handleSubmit}>
                 <label>
                   <TextInput type="file" ref={fileInput} name="picture" />
                 </label>
                 <br />
                 <Button type="submit" label="Upload" primary />
-              </form>
+              </form> */}
             </div>
             <div>
               <h3>{props.users.displayName}</h3>

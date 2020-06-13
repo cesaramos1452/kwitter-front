@@ -76,8 +76,8 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
       return { ...state, displayPhoto: action.payload };
     }
     case PUT_USER_PICTURE: {
-      const { pictureLocation } = action.payload;
-      return { ...state, pictureLocation };
+      // const { pictureLocation } = action.payload;
+      return { ...state };
     }
     default:
       return state;
