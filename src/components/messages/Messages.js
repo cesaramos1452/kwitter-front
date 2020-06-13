@@ -7,7 +7,7 @@ import { grommet } from "grommet/themes";
 export const Messages = (props) => {
   console.log({ props });
   useEffect(() => {
-    props.getMessagesList();
+    console.log(props.getMessagesList())
   }, []);
 
   return (

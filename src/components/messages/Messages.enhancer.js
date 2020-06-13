@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getMessagesList } from "../../redux/actions/message"; //
+import { getMessagesList } from "../../redux/actions/message"; 
 
 const mapStateToProps = (state) => ({
   messages: state.messages.messages,

@@ -9,7 +9,7 @@ import {
 
 const INITIAL_STATE = {
   messages: [],
-  text: ''
+  
 };
 
 export const messageReducer = (state = INITIAL_STATE, action) => {
@@ -22,10 +22,13 @@ export const messageReducer = (state = INITIAL_STATE, action) => {
           }
         };
       case CREATE_MESSAGE:{
-        const {text} = action.payload;
+        const { message } = action.payload;
+        console.log()
         return{
           ...state,
-          text
+          messages:[...state.messages, message]
+          
+      
         }
       }
       default:
