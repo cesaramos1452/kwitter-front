@@ -14,3 +14,12 @@ export const getMessagesList = () => async (dispatch, getState) => {
     console.log(err);
   }
 };
+
+export const createMessage = (text) => async (dispatch, getState) => {
+  try{
+    const payload = await api.createMessage(text);
+    dispatch({type: CREATE_MESSAGE, payload})
+  }catch (err) {
+    console.log(err)
+  }
+}

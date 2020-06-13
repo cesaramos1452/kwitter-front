@@ -147,9 +147,10 @@ class API {
 
   ////////////////   Create a message template
 
-  async createMessage(messageText) {
+  async createMessage(text) {
     try {
-      const result = await this.axiosInstance.post("/messages", messageText);
+      const result = await this.axiosInstance.post("/messages",text)
+      console.log(result)
       return result;
     } catch (err) {
       helpMeInstructor(err);

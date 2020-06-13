@@ -18,7 +18,6 @@ export const login = (credentials) => async (dispatch, getState) => {
     // ℹ️ℹ️This is how you would debug the response to a requestℹ️ℹ️
     // console.log({ result })
     dispatch({ type: LOGIN_SUCCESS, payload });
-    console.log("HELLO", getState())
   } catch (err) {
     dispatch({
       type: LOGIN_FAILURE,
