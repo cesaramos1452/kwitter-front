@@ -86,7 +86,6 @@ class API {
   async getUser(username) {
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -120,17 +119,14 @@ class API {
     }
   }
 
-  async getUserPicture(pictureLocation) {
-    console.log(pictureLocation);
+  async getUserPicture(username) {
+    console.log(username);
     try {
-      const result = await this.axiosInstance.get(pictureLocation, {
-        headers: { accpet: "image/png" },
-      });
-      console.log(result);
-      return result;
+      const result = await this.axiosInstance.get(`/users/${username}/picture`);
+      return true;
     } catch (err) {
       helpMeInstructor(err);
-      return err;
+      return false;
     }
   }
 
@@ -187,25 +183,27 @@ class API {
 
   ////////////////   add a like template
 
-  // async addLike(likeId) {
-  //   try {
-  //     await this.axiosInstance.post("/likes", likeId);
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async addLike(likeId) {
+    try {
+      let result = await this.axiosInstance.post("/likes", likeId);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 
   ////////////////   remove a like template
 
-  // async removeLike() {
-  //   try {
-  //     await this.axiosInstance.delete(`/likes/${likeId}`, likeId);
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async removeLike(likeId) {
+    try {
+      let result = await this.axiosInstance.delete(`/likes/${likeId}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
