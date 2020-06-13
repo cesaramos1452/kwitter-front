@@ -47,11 +47,7 @@ export const UserProfile = (props) => {
                   <TextInput type="file" ref={fileInput} name="picture" />
                 </label>
                 <br />
-                <Button
-                  type="submit"
-                  label="Upload"
-                  primary
-              />
+                <Button type="submit" label="Upload" primary />
               </form>
             </div>
             <div>
