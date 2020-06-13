@@ -24,16 +24,15 @@ export const Messages = (props) => {
     <Grommet theme={grommet}>
       <Box
         border
-        pad="medium"
         elevation="medium"
         className="messagesList"
-        style={{ maxWidth: "710px" }}
+        style={{maxWidth:"610px",marginTop:"30px" }}
       >
         {props.messsages !== [] &&
           props.messages.map((message, index) => {
             if (index < 100)
               return (
-                <Box border pad="medium" elevation="medium" className="message">
+                <Box border elevation="medium" className="message">
                   <Avatar
                     className="AvatarImg"
                     src={
