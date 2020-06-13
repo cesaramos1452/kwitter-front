@@ -1,5 +1,7 @@
 .newsFeed {
+    box-sizing: content-box;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    align-items: stretch;
 }

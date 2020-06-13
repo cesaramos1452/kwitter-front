@@ -58,8 +58,8 @@ export const UserProfile = (props) => {
               <h3>{props.users.displayName}</h3>
               <p>{props.users.username}</p>
               <p>About Me: {props.users.about}</p>
-              <p>Last Update: {props.users.updatedAt}</p>
-              <p>Created Profile: {props.users.createdAt}</p>
+              <p>Last Updated: {props.users.updatedAt}</p>
+              <p>Candy Journy Started: {props.users.createdAt}</p>
               {/* TODO: conditional render if updating is true or false */}
               {/* add SAVE BUTTON, andd DISCARD button */}
               {/* Have input fields to update prefilled with from API call */}

@@ -12,11 +12,16 @@ export const ListOfUsers = (props) => {
   }, []);
   return (
     <Grommet theme={grommet}>
-        <Box border background={{ color:"theme", opacity: true }} idName25038="userList">
-        
+        <Box 
+          border
+          className="userList"
+          elevation="medium" 
+          background={{ color:"theme", opacity: true }}
+          style={{maxWidth:"350px"}, {minWidth:"250px"}}
+        >
           {props.users.length !== 0 &&
             props.users.map((user) => (
-              <li className="user" >
+              <Box border pad="small" elevation="medium" className="user">
               <Avatar className="AvatarImg" src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
               <Link
                 key={user.username + Math.random()}
@@ -24,7 +29,7 @@ export const ListOfUsers = (props) => {
               >
                 {user.username}
               </Link>
-              </li>
+              </Box>
               // <li className="user" >
               //   <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
               //   {/* <Avatar src={${user.picture}}/> */}
