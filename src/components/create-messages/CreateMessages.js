@@ -12,8 +12,10 @@ const CreateMessages = (props) => {
 
     const clicker = (event) =>{
         event.preventDefault()
+        if( userMesssage !== ''){
         props.createMessage({text:userMesssage})
         setUserMessage('')
+        }
     }
     return (
         <div>
@@ -23,9 +25,7 @@ const CreateMessages = (props) => {
                     value={userMesssage}
                     onChange={setUserInput}
                     placeholder='Write Message Here'
-                    >
-
-                    </textarea>
+                    />
                 </div>
                 <button>Click</button>
              </form>
