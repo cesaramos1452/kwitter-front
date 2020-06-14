@@ -26,9 +26,6 @@ export const messageReducer = (state = INITIAL_STATE, action) => {
         console.log()
         return{
           ...state,
-          messages:[...state.messages, message]
-          
-      
         }
       }
       default:

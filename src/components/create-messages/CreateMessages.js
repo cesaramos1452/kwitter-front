@@ -1,14 +1,34 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 
 
 const CreateMessages = (props) => {
-    const clicker = () =>{
-        props.createMessage({text: 'hello'})
+    console.log(props.messages.messages)
+    const [userMesssage, setUserMessage] = useState('')
+
+    const setUserInput = (event) =>{
+        setUserMessage(event.target.value)
+        
     }
-    console.log()
+
+    const clicker = (event) =>{
+        event.preventDefault()
+        if( userMesssage !== ''){
+        props.createMessage({text:userMesssage})
+        setUserMessage('')
+        }
+    }
     return (
         <div>
-            <button onClick={clicker}>press</button>
+            <form onSubmit={clicker}>
+                <div>
+                    <textarea 
+                    value={userMesssage}
+                    onChange={setUserInput}
+                    placeholder='Write Message Here'
+                    />
+                </div>
+                <button>Click</button>
+             </form>
         </div>
     );
 }
