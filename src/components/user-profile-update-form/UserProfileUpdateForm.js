@@ -66,7 +66,7 @@ export const UserProfileUpdateForm = (props) => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="baseline">
-        <div className="updateProfile" style={{ display: "flex" }}>
+        <div className="updateProfile">
           <div className="updatePhoto">
             <img
               className="ProfileImg"
@@ -85,7 +85,8 @@ export const UserProfileUpdateForm = (props) => {
               <Button type="submit" label="Upload" primary />
             </form>
           </div>
-          <Form className="updateForm" onSubmit={clickHandler}>
+          <div className="updateForm">
+          <Form  onSubmit={clickHandler}>
             <Box
               className="textField"
               direction="row"
@@ -138,15 +139,18 @@ export const UserProfileUpdateForm = (props) => {
                 onClick={() => setReveal(!reveal)}
               />
             </Box>
-            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+            <Box direction="row" justify="end" margin={{ top: "medium" }}>
               <Link to={`/profiles/${props.username}`}>
                 <Button
                   label="Save Changes"
                   primary
                   type="submit"
                   onClick={clickHandler}
+                  fill="true"
                 />
               </Link>
+              </Box>
+              <Box direction="row" justify="end" margin={{ top: "medium" }}>
               <Link to={`/`}>
                 <Button
                   secondary
@@ -155,8 +159,9 @@ export const UserProfileUpdateForm = (props) => {
                   color="red"
                 />
               </Link>
-            </Box>
+              </Box>
           </Form>
+          </div>
         </div>
       </Box>
     </Grommet>

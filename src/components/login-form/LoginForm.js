@@ -28,13 +28,13 @@ export const LoginForm = ({ login, loading, error }) => {
   };
 
   return (
-    <Grommet full theme={grommet} style={{ height: "47vh" }}>
+    <Grommet full theme={grommet} style={{ height: "47vh" }} >
       <Box fill align="center" justify="center">
         <Box align="center">
           {loading && <Loader />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
           <Form className="loginForm" id="login-form" onSubmit={handleLogin}>
-            <FormField round="small" border>
+          <Box margin="small" direction="row" align="center" round="small" border>
               <TextInput
                 type="text"
                 name="username"
@@ -44,8 +44,8 @@ export const LoginForm = ({ login, loading, error }) => {
                 htmlFor="username"
                 onChange={handleChange}
               />
-            </FormField>
-            <Box direction="row" align="center" round="small" border>
+           </Box>
+            <Box margin="small" direction="row" align="center" round="small" border>
               <TextInput
                 type={reveal ? "text" : "password"}
                 name="password"
@@ -60,20 +60,24 @@ export const LoginForm = ({ login, loading, error }) => {
               />
             </Box>
             <Box direction="row" justify="between" margin={{ top: "medium" }}>
-              <Link to={`/signup`}>
-                <Button
-                  label="Sign Up"
-                  primary
-                  disabled={loading}
-                />
-              </Link>
               <Button
                 type="submit"
                 label="Sign In"
                 primary
                 disabled={loading}
+                fill="true"
               />
             </Box>
+            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+              <Link to={`/signup`}>
+                <Button
+                  label="Sign Up"
+                  primary
+                  disabled={loading}
+                  color="lightgreen"
+                />
+              </Link>
+              </Box>
           </Form>
         </Box>
       </Box>

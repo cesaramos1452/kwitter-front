@@ -33,7 +33,7 @@ export const SignUpForm = ({ createUser, loading, error }) => {
           {loading && <Loader />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
           <Form className="SignUpForm" id="signup-form" onSubmit={handleSignUp}>
-            <FormField round="small" border>
+            <Box margin="small" direction="row" align="center" round="small" border>
               <TextInput
                 type="text"
                 label="username"
@@ -45,8 +45,8 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                 htmlFor="username"
                 onChange={handleChange}
               />
-            </FormField>
-            <FormField round="small" border>
+             </Box>
+            <Box margin="small" direction="row" align="center" round="small" border>
               <TextInput
                 type="text"
                 label="display name"
@@ -58,8 +58,8 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                 htmlFor="displayName"
                 onChange={handleChange}
               />
-            </FormField>
-            <Box direction="row" align="center" round="small" border>
+             </Box>
+            <Box margin="small" direction="row" align="center" round="small" border>
               <TextInput
                 type={reveal ? "text" : "password"}
                 name="password"
@@ -74,7 +74,7 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                 onClick={() => setReveal(!reveal)}
               />
             </Box>
-            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+            <Box direction="row" justify="end" margin={{ top: "medium" }}>
               <Link to={`/`}>
                 <Button
                   type="submit"
@@ -82,6 +82,7 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                   onClick={handleSignUp}
                   primary
                   disabled={loading}
+                  color="lightgreen"
                 />
               </Link>
             </Box>
