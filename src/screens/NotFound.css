@@ -1,0 +1,21 @@
+.NotFound {
+    box-sizing: border-box;
+    border-radius: 25px;
+    margin: 50px;
+    padding: 50px;
+}
+
+.contentBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.candyBear {
+    height: 70%;
+    width: 30%;
+}
+
+.para {
+    max-width: 30%;
+}
