@@ -49,3 +49,7 @@ GET http://kwitter-api.herokuapp.com/messages
 ###
 
 GET http://kwitter-api.herokuapp.com/users/vinchinzo1234/picture
+
+###
+
+DELETE http://kwitter-api.herokuapp.com/messages/

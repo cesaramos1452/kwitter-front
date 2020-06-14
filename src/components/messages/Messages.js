@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 export const Messages = (props) => {
   useEffect(() => {
+    console.log(props)
     props.getMessagesList();
   }, [props.messages.length, props.likes]);
 
@@ -16,6 +17,10 @@ export const Messages = (props) => {
     });
     props.removeLike(removedLike[0].id);
   };
+
+  const deleteMessageHandler = () =>{
+    console.log(props.deleteMessage(4595))
+  }
 
   return (
     <Grommet theme={grommet}>
@@ -63,7 +68,9 @@ export const Messages = (props) => {
                         <button onClick={() => removeLikeHandler(message.id)}>
                           Drop this CandyGram
                         </button>
+    
                       )}
+                       <button onClick={deleteMessageHandler}>Delete</button>
                     </div>
                   </div>
                   {/* {message.text} */}
