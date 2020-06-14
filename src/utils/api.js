@@ -173,14 +173,16 @@ class API {
 
   ////////////////   delete a message template
 
-  // async deleteMessage(messageId) {
-  //   try {
-  //     await this.axiosInstance.delete(`/messages/${messageId}`, messageId);
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     return err;
-  //   }
-  // }
+  async deleteMessage(messageId) {
+    try {
+     let result = await this.axiosInstance.delete(`/messages/${messageId}`);
+     console.log(result)
+     return result
+    } catch (err) {
+      helpMeInstructor(err);
+      return err;
+    }
+  }
 
   ////////////////   add a like template
 

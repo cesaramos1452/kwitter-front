@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getMessagesList } from "../../redux/actions/message"; //
+import { getMessagesList, deleteMessage } from "../../redux/actions/message"; //
 import { getUser, getUserPicture } from "../../redux/actions/users"; //
 import { addLike, removeLike } from "../../redux/actions/index"; //
 
@@ -14,6 +14,7 @@ const mapDispatchToProps = {
   getUserPicture,
   addLike,
   removeLike,
+  deleteMessage
 };
 
 export const enhancer = connect(mapStateToProps, mapDispatchToProps);

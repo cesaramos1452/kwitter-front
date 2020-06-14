@@ -1,6 +1,6 @@
 // TODO: implement
 
-import { GET_LIST_MESSAGES, CREATE_MESSAGE } from "../actions";
+import { GET_LIST_MESSAGES, CREATE_MESSAGE, DELETE_MESSAGE } from "../actions";
 
 const INITIAL_STATE = {
   messages: [],
@@ -21,6 +21,12 @@ export const messageReducer = (state = INITIAL_STATE, action) => {
         ...state,
         messages: [...state.messages, message],
       };
+    }
+    case DELETE_MESSAGE: 
+    const {messageId} = action.payload
+    return {
+      ...state,
+      messages: state.messages.messages.filter(message=> message.id !== messageId)
     }
     default:
       return state;

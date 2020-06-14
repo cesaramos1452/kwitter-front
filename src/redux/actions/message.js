@@ -23,3 +23,14 @@ export const createMessage = (text) => async (dispatch, getState) => {
     console.log(err)
   }
 }
+
+export const deleteMessage = (messageId) => async (dispatch, getState) => {
+  try{
+    const payload = await api.deleteMessage(messageId);
+    dispatch({type: CREATE_MESSAGE, payload})
+  }catch (err) {
+    console.log(err)
+  }
+}
+
+
