@@ -12,11 +12,11 @@ export const NewsScreen = (props) => {
   const { username } = props.match.params;
   return (
     <Grommet theme={grommet}>
-      <CreateMessageContainer/>
       <MenuContainer />
       <div className="newsFeed">
         <div className="messages">
-          <MessageContainer />
+            <CreateMessageContainer/>
+            <MessageContainer />
         </div>
         <div className="userList">
           <ListOfUsersContainer />
