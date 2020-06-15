@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
-import { Grommet, Header, Main, TextInput, Button } from "grommet";
+import { Grommet, Main, } from "grommet";
 import { grommet } from "grommet/themes";
 import "./UserProfile.css";
 import FormData from "form-data";

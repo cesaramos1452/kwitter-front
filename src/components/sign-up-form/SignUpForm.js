@@ -74,7 +74,15 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                 onClick={() => setReveal(!reveal)}
               />
             </Box>
-            <Box direction="row" justify="end" margin={{ top: "medium" }}>
+            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+            <Link to={`/`}>
+                <Button
+                  label="Back"
+                  primary
+                  disabled={loading}
+                  color="black"
+                />
+              </Link>
               <Link to={`/`}>
                 <Button
                   type="submit"
@@ -85,7 +93,7 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                   color="lightgreen"
                 />
               </Link>
-            </Box>
+              </Box>
           </Form>
         </Box>
       </Box>

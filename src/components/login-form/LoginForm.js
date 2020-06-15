@@ -28,7 +28,7 @@ export const LoginForm = ({ login, loading, error }) => {
   };
 
   return (
-    <Grommet full theme={grommet} style={{ height: "47vh" }} >
+    <Grommet theme={grommet} >
       <Box fill align="center" justify="center">
         <Box align="center">
           {loading && <Loader />}
@@ -38,6 +38,7 @@ export const LoginForm = ({ login, loading, error }) => {
               <TextInput
                 type="text"
                 name="username"
+                placeholder="display name"
                 autoFocus
                 value={state.username}
                 required
@@ -49,6 +50,7 @@ export const LoginForm = ({ login, loading, error }) => {
               <TextInput
                 type={reveal ? "text" : "password"}
                 name="password"
+                placeholder="password"
                 value={state.password}
                 required
                 htmlFor="password"
@@ -68,7 +70,7 @@ export const LoginForm = ({ login, loading, error }) => {
                 fill="true"
               />
             </Box>
-            <Box direction="row" justify="between" margin={{ top: "medium" }}>
+            <Box direction="row" justify="end" margin={{ top: "medium" }}>
               <Link to={`/signup`}>
                 <Button
                   label="Sign Up"
