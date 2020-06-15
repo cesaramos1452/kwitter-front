@@ -44,7 +44,7 @@ export const ListOfUsers = (props) => {
                   />
                   <Link
                     key={user.username + Math.random()}
-                    to={`/profiles/${user.username}`}
+                    to={`/profiles/${user.username}/profile`}
                   >
                     {user.username}
                   </Link>
