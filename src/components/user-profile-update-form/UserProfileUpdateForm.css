@@ -9,6 +9,10 @@
     padding: 0em 3em 1em;
 }
 
+.updatePhoto {
+    margin: auto;
+}
+
 .updateProfile {
     max-width: 80%;
     display: flex;

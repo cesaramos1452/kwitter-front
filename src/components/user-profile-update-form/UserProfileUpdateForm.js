@@ -64,9 +64,8 @@ export const UserProfileUpdateForm = (props) => {
   };
 
   return (
-    <Grommet full theme={grommet}>
-      <Box align="between" justify="center">
-        <div className="updateProfile">
+    <Grommet theme={grommet}>
+      <Box align="stretch" justify="center">
           <div className="updatePhoto">
             <img
               className="ProfileImg"
@@ -164,7 +163,6 @@ export const UserProfileUpdateForm = (props) => {
               </Box>
             </Form>
           </div>
-        </div>
       </Box>
     </Grommet>
   );
