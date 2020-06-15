@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import BlankProfile from "../images/blank-profile.png";
 import "./Messages.css";
 
-import { Avatar, Box, Grommet, InfiniteScroll, Text } from "grommet";
+import { Avatar, Box, Grommet, InfiniteScroll } from "grommet";
 import { grommet } from "grommet/themes";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -60,9 +60,10 @@ export const Messages = (props) => {
                 key={item.username + Math.random()}
               >
                 <Avatar
+                  onError={BlankProfile}
                   className="AvatarImg"
                   src={
-                    item.pictureLocation !== null
+                    `https://kwitter-api.herokuapp.com/users/${item.username}/picture` !== {"message":"User does not have a picture","statusCode":404}
                     ? `https://kwitter-api.herokuapp.com/users/${item.username}/picture`
                     : `${BlankProfile}`
                   }

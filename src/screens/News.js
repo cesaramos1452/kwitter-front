@@ -16,7 +16,7 @@ export const NewsScreen = (props) => {
       <div className="newsFeed">
         <div className="messages">
             <CreateMessageContainer/>
-            <MessageContainer />
+            <MessageContainer profile={username}/>
         </div>
         <div className="userList">
           <ListOfUsersContainer />
