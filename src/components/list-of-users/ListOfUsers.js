@@ -49,12 +49,6 @@ export const ListOfUsers = (props) => {
                   </Link>
                 </li>
               );
-
-            // <li className="user" >
-            //   <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
-            //   {/* <Avatar src={${user.picture}}/> */}
-            //   <Link to={`/profiles/${user.username}`}>{user.username}</Link>
-            // </li>
           })}
         {displayUsers !== 0 && (
           <button onClick={displayPreviousUsers}>previous 10 users</button>

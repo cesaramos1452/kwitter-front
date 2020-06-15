@@ -8,27 +8,20 @@ export const DELETE_MESSAGE = "DELETE_MESSAGE";
 export const getMessagesList = (number) => async (dispatch, getState) => {
   try {
     const payload = await api.getMessages(number);
-    console.log(payload);
     dispatch({ type: GET_LIST_MESSAGES, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const createMessage = (text) => async (dispatch, getState) => {
   try {
     const payload = await api.createMessage(text);
     dispatch({ type: CREATE_MESSAGE, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const deleteMessage = (messageId) => async (dispatch, getState) => {
   try {
     const payload = await api.deleteMessage(messageId);
     dispatch({ type: CREATE_MESSAGE, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };

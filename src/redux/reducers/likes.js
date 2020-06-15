@@ -1,5 +1,3 @@
-// TODO: implement
-// TODO: implement
 import { ADD_LIKE, REMOVE_LIKE } from "../actions";
 
 const INITIAL_STATE = {
@@ -7,12 +5,9 @@ const INITIAL_STATE = {
 };
 
 export const likesReducer = (state = INITIAL_STATE, action) => {
-  console.log("this is the action", { action });
-  console.log(state);
   switch (action.type) {
     case ADD_LIKE: {
       const { like } = action.payload;
-      console.log(like);
       if (like)
         return {
           ...state,

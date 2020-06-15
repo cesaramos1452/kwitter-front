@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const Messages = (props) => {
-
   const [numberOfMessagesDisplayed, setNumberOfMessagesDisplayed] = useState(
     100
   );
@@ -31,11 +30,6 @@ export const Messages = (props) => {
   const getMoreUsers = () => {
     setNumberOfMessagesDisplayed(numberOfMessagesDisplayed + 100);
     props.getMessagesList(numberOfMessagesDisplayed + 100);
-  };
-
-  const determineIfPictureIsUploaded = (username) => {
-    //fetch user
-    //if user .pictureloaction !== null
   };
 
   return (
@@ -63,9 +57,10 @@ export const Messages = (props) => {
                   onError={BlankProfile}
                   className="AvatarImg"
                   src={
-                    `https://kwitter-api.herokuapp.com/users/${item.username}/picture` !== {"message":"User does not have a picture","statusCode":404}
-                    ? `https://kwitter-api.herokuapp.com/users/${item.username}/picture`
-                    : `${BlankProfile}`
+                    `https://kwitter-api.herokuapp.com/users/${item.username}/picture` !==
+                    { message: "User does not have a picture", statusCode: 404 }
+                      ? `https://kwitter-api.herokuapp.com/users/${item.username}/picture`
+                      : `${BlankProfile}`
                   }
                 />
                 <Link to={`/profiles/${item.username}`}>{item.username}</Link>

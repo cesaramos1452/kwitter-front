@@ -17,7 +17,6 @@ export const authReducer = (state = INITIAL_STATE, action) => {
       };
     case LOGIN_SUCCESS:
       const { username, token } = action.payload;
-      console.log({token});
       return {
         ...INITIAL_STATE,
         isAuthenticated: token,

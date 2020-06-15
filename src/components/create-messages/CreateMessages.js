@@ -26,7 +26,7 @@ const CreateMessages = (props) => {
             rows="3"
           />
         </div>
-        <button>Click</button>
+        <button>Drop a sweet!</button>
       </form>
     </div>
   );

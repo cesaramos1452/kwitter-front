@@ -20,64 +20,47 @@ export const getUser = (userName) => async (dispatch, getState) => {
     // ℹ️ℹ️This is how you would debug the response to a requestℹ️ℹ️
     // console.log({ result });
     dispatch({ type: GET_USER, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const updateUser = (user) => async (dispatch, getState) => {
   try {
     const payload = await api.updateUser(user);
     dispatch({ type: UPDATE_USER, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const getUserList = (number) => async (dispatch, getState) => {
   try {
     const payload = await api.getUserList(number);
     dispatch({ type: GET_USER_LIST, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const createUser = (user) => async (dispatch, getState) => {
   try {
-    console.log(user);
     const payload = await api.createUser(user);
     dispatch({ type: CREATE_NEW_USER, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const deleteUser = (username) => async (dispatch, getState) => {
   try {
-    console.log(username);
     const payload = await api.deleteUser(username);
     dispatch({ type: DELETE_USER, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const getUserPicture = (username) => async (dispatch, getState) => {
   try {
     const payload = await api.getUserPicture(username);
     dispatch({ type: GET_USER_PICTURE, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const putUserPicture = (user) => async (dispatch, getState) => {
   try {
     const payload = await api.putUserPicture(user);
-    console.log(payload);
     dispatch({ type: PUT_USER_PICTURE, payload });
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
