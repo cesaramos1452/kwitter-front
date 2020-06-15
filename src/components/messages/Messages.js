@@ -74,7 +74,7 @@ export const Messages = (props) => {
 
                   <Link
                     style={{ textDecoration: "none" }}
-                    to={`/profiles/${item.username}`}
+                    to={`/profiles/${item.username}/profile`}
                   >
                     {item.username}
                   </Link>
