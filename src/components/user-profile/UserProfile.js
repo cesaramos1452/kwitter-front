@@ -3,16 +3,11 @@ import BlankProfile from "../images/blank-profile.png";
 import { Grommet, Main, } from "grommet";
 import { grommet } from "grommet/themes";
 import "./UserProfile.css";
-import FormData from "form-data";
 
 export const UserProfile = (props) => {
-  console.log({ props });
-  const fileInput = React.createRef();
-
   useEffect(() => {
     props.getUser(props.profile);
-    console.log(props);
-  }, []);
+  }, [props.profile]);
   return (
     <Grommet theme={grommet}>
       <Main margin="medium" pad="small">
@@ -29,13 +24,6 @@ export const UserProfile = (props) => {
                 }
                 alt="profile-picture"
               />
-              {/* <form onSubmit={handleSubmit}>
-                <label>
-                  <TextInput type="file" ref={fileInput} name="picture" />
-                </label>
-                <br />
-                <Button type="submit" label="Upload" primary />
-              </form> */}
             </div>
             <div>
               <h3>{props.users.displayName}</h3>
@@ -43,9 +31,6 @@ export const UserProfile = (props) => {
               <p>About Me: {props.users.about}</p>
               <p>Last Updated: {props.users.updatedAt}</p>
               <p>Candy Journy Started: {props.users.createdAt}</p>
-              {/* TODO: conditional render if updating is true or false */}
-              {/* add SAVE BUTTON, andd DISCARD button */}
-              {/* Have input fields to update prefilled with from API call */}
             </div>
           </div>
         )}
