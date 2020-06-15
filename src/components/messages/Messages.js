@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import BlankProfile from "../images/blank-profile.png";
 import "./Messages.css";
 
 import { Avatar, Box, Grommet, InfiniteScroll, Text } from "grommet";
@@ -7,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const Messages = (props) => {
+
   const [numberOfMessagesDisplayed, setNumberOfMessagesDisplayed] = useState(
     100
   );
@@ -60,9 +62,9 @@ export const Messages = (props) => {
                 <Avatar
                   className="AvatarImg"
                   src={
-                    // fetch the users photo if null retrun the second image
-                    `https://kwitter-api.herokuapp.com/users/${item.username}/picture` ||
-                    "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
+                    item.pictureLocation !== null
+                    ? `https://kwitter-api.herokuapp.com/users/${item.username}/picture`
+                    : `${BlankProfile}`
                   }
                 />
                 <Link to={`/profiles/${item.username}`}>{item.username}</Link>
