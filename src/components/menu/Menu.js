@@ -13,7 +13,7 @@ export const Menu = (props) => {
   const { isAuthenticated, logout, username } = props;
   return (
     <Grommet theme={grommet}>
-      <div className="menuBar">
+      <Box border direction="row" justify="between" elevation="medium" className="menuBar" >
         <div>
           <img className="logo" src={Logo} alt="logo" />
         </div>
@@ -23,10 +23,10 @@ export const Menu = (props) => {
         <div>
           {isAuthenticated && (
             <div id="menu-links">
-              <Link to={`/profiles/${username}/newsfeed`}>
+              <Link to={`/profiles/${username}`}>
                 <Anchor icon={<Article />} />
               </Link>
-              <Link to={`/profiles/${username}`}>
+              <Link to={`/profiles/${username}/profile`}>
                 <Anchor icon={<User />} />
               </Link>
               <Link to={`/profiles/${username}/editprofile`}>
@@ -38,7 +38,7 @@ export const Menu = (props) => {
             </div>
           )}
         </div>
-      </div>
+      </Box>
     </Grommet>
   );
 };

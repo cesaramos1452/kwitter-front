@@ -43,6 +43,7 @@ export const Messages = (props) => {
         className="messagesList"
         style={{ maxWidth: "610px", marginTop: "30px" }}
       >
+        <h3 className="candyFeed" >Candy Feed</h3>
         {props.messsages !== [] && (
           <InfiniteScroll
             items={props.messages}

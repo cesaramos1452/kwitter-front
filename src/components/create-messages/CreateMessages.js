@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./CreateMessages.css";
 
-import { Button, TextArea, Box } from "grommet";
+import { Button, Grommet, TextArea, Box } from "grommet";
 import { grommet } from "grommet/themes";
 
 const CreateMessages = (props) => {
@@ -18,25 +19,29 @@ const CreateMessages = (props) => {
     }
   };
   return (
-    <div>
+    <Grommet theme={grommet} >
+      <Box border className="candyGramBox" elevation="medium" >
       <form onSubmit={clicker}>
-        <Box elevation="medium" margin=" 10px">
+        
+          <h3 >Candy Gram</h3>
           <TextArea
+            className="candyTextArea"
+            resize={false}
             value={userMesssage}
             onChange={setUserInput}
             placeholder="How sweet are you today?"
             cols="36"
             rows="3"
           />
-        </Box>
         <Button
           type="submit"
-          margin="0 0 0 10px"
+          margin="15px 0 0 10px"
           justify="end"
           label="Drop a sweet!"
         />
       </form>
-    </div>
+      </Box>
+    </Grommet>
   );
 };
 
