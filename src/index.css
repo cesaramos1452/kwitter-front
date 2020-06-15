@@ -1,6 +1,7 @@
 body {
     max-width: 65em !important;
     margin: 0 auto !important;
+    padding: 2em !important;
 }
 
 input:focus {

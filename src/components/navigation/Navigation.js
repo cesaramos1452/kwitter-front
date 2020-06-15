@@ -15,13 +15,13 @@ export const Navigation = () => (
       <ConnectedRoute
         exact
         isProtected
-        path="/profiles/:username/newsfeed"
+        path="/profiles/:username"
         component={NewsScreen}
       />
       <ConnectedRoute
         exact
         isProtected
-        path="/profiles/:username"
+        path="/profiles/:username/profile"
         component={ProfileScreen}
       />
       <ConnectedRoute
