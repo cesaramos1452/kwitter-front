@@ -33,6 +33,11 @@ export const Messages = (props) => {
     props.getMessagesList(numberOfMessagesDisplayed + 100);
   };
 
+  const determineIfPictureIsUploaded = (username) => {
+    //fetch user
+    //if user .pictureloaction !== null
+  };
+
   return (
     <Grommet style={{ marginBottom: "50px" }} theme={grommet}>
       <Box
