@@ -13,6 +13,7 @@ export const Navigation = () => (
         component={SignUpScreen}
       />
       <ConnectedRoute
+        exact
         isProtected
         path="/profiles/:username/newsfeed"
         component={NewsScreen}
@@ -24,6 +25,7 @@ export const Navigation = () => (
         component={ProfileScreen}
       />
       <ConnectedRoute
+        exact
         isProtected
         path="/profiles/:username/editprofile"
         component={UpdateProfileScreen}
