@@ -65,7 +65,7 @@ export const UserProfileUpdateForm = (props) => {
 
   return (
     <Grommet full theme={grommet}>
-      <Box fill align="baseline">
+      <Box align="between" justify="center">
         <div className="updateProfile">
           <div className="updatePhoto">
             <img
