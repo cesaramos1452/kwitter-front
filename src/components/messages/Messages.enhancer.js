@@ -5,6 +5,7 @@ import { addLike, removeLike } from "../../redux/actions/index"; //
 
 const mapStateToProps = (state) => ({
   messages: state.messages.messages,
+  userMessages: state.messages.userMessages,
   likes: state.likes.likes,
 });
 
@@ -14,7 +15,7 @@ const mapDispatchToProps = {
   getUserPicture,
   addLike,
   removeLike,
-  deleteMessage
+  deleteMessage,
 };
 
 export const enhancer = connect(mapStateToProps, mapDispatchToProps);
