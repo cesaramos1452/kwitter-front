@@ -27,7 +27,7 @@ export const SignUpForm = ({ createUser, loading, error }) => {
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
   };
   return (
-    <Grommet full theme={grommet} style={{ height: "47vh" }}>
+    <Grommet full theme={grommet} style={{ height: "75vh" }}>
       <Box fill align="center" justify="center">
         <Box align="center">
           {loading && <Loader />}
@@ -74,15 +74,7 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                 onClick={() => setReveal(!reveal)}
               />
             </Box>
-            <Box direction="row" justify="between" margin={{ top: "medium" }}>
-            <Link to={`/`}>
-                <Button
-                  label="Back"
-                  primary
-                  disabled={loading}
-                  color="black"
-                />
-              </Link>
+            <Box direction="row" justify="end" margin={{ top: "medium" }}>
               <Link to={`/`}>
                 <Button
                   type="submit"
@@ -93,6 +85,15 @@ export const SignUpForm = ({ createUser, loading, error }) => {
                   color="lightgreen"
                 />
               </Link>
+              </Box>
+              <Box direction="row" justify="end" margin={{ top: "medium" }}>
+                <Link to={`/`}>
+                    <Button
+                      label="Login"
+                      primary
+                      disabled={loading}
+                    />
+                </Link>
               </Box>
           </Form>
         </Box>

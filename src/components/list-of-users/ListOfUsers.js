@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import BlankProfile from "../images/blank-profile.png";
 import "./ListOfUsers.css";
 
 import { Avatar, Box, Grommet } from "grommet";
@@ -37,7 +38,7 @@ export const ListOfUsers = (props) => {
                     src={
                       user.pictureLocation !== null
                         ? `https://kwitter-api.herokuapp.com/users/${user.username}/picture`
-                        : "//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80"
+                        : `${BlankProfile}`
                     }
                   />
                   <Link
