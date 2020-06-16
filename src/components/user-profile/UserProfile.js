@@ -28,9 +28,9 @@ export const UserProfile = (props) => {
             <div>
               <h3>{props.users.displayName}</h3>
               <p>{props.users.username}</p>
-              <p>About Me: {props.users.about}</p>
-              <p>Last Updated: {props.users.updatedAt}</p>
-              <p>Candy Journy Started: {props.users.createdAt}</p>
+              <p><strong>About Me:</strong> {props.users.about}</p>
+              <p><strong>Last Updated:</strong> {props.users.updatedAt}</p>
+              <p><strong>Candy Journy Started:</strong> {props.users.createdAt}</p>
             </div>
           </div>
         )}
