@@ -137,7 +137,7 @@ export const UserProfileUpdateForm = (props) => {
               />
             </Box>
             <Box direction="row" justify="end" margin={{ top: "medium" }}>
-              <Link to={`/profiles/${props.username}`}>
+              <Link to={`/profiles/${props.username}/profile`}>
                 <Button
                   label="Save Changes"
                   primary
