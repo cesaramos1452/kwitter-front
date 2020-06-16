@@ -65,3 +65,13 @@ Another huge learning was around Git and GitLab, when to pull/push/make branches
 Lastly, due to the premature understanding of Kwitter when we began I think the tickets were not broken down as effectively as they could've. We did have a good understanding through out Slack/Trello communication, but the tickets, in retrospect were too broad.
 
 Overall the project was fun and challenging. I feel more confident in my ability to read documentations, plan, code and perservere. I share emmense thanks to Veronica Fuentes and Cesar Ramos for their dedication and hardwork, this project would not be a quarter of polished if it weren't for them!
+
+
+Veronica Fuentes
+
+There is always a learning curve to incorporating with new people. While, our team we amazing, we had never worked together and we had to learn how to be a team. One thing that I thought that we did really well was communication. We were constantly talking on slack and updating trello.
+
+Next time I am on a team I hope that I am better about asserting myself when I know that I'm right. I hope that our team makes tasks clear. We learned many things about using a trello board that I had never seen and I wished that we had known these tactic before hand. I also wish that we had taken more advantage of our team members as a resource.
+
+The project as a whole was fun and exciting and easy thanks to my team members, Vincent and Cesar. I was very fortunate to have been group with such capable people.
+
