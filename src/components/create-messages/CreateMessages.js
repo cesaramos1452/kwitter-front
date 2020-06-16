@@ -31,7 +31,7 @@ const CreateMessages = (props) => {
             onChange={setUserInput}
             placeholder="How sweet are you today?"
             cols="36"
-            rows="3"
+            rows="1"
           />
         <Button
           type="submit"
