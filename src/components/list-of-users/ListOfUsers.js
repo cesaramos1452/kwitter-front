@@ -26,9 +26,9 @@ export const ListOfUsers = (props) => {
         className="userList"
         elevation="medium"
         background={{ color: "theme", opacity: true }}
-        style={({ maxWidth: "350px" }, { minWidth: "250px" })}
+        style={{ maxWidth: "350px" }}
       >
-      <h3 className="candyPals" >Candy Pals</h3>
+        <h3 className="candyPals">Candy Pals</h3>
         {props.users.length !== 0 &&
           props.users.map((user, index) => {
             if (displayUsers <= index && index < displayUsers + 10)

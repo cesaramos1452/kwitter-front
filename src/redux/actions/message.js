@@ -4,6 +4,7 @@ export const GET_LIST_MESSAGES = "GET_LIST_MESSAGES";
 export const CREATE_MESSAGE = "CREATE_MESSAGE";
 export const GET_MESSAGE = "GET_MESSAGE";
 export const DELETE_MESSAGE = "DELETE_MESSAGE";
+export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
 
 export const getMessagesList = (number) => async (dispatch, getState) => {
   try {
@@ -22,6 +23,6 @@ export const createMessage = (text) => async (dispatch, getState) => {
 export const deleteMessage = (messageId) => async (dispatch, getState) => {
   try {
     const payload = await api.deleteMessage(messageId);
-    dispatch({ type: CREATE_MESSAGE, payload });
+    dispatch({ type: DELETE_MESSAGE, payload });
   } catch (err) {}
 };

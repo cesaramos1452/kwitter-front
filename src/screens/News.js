@@ -4,7 +4,7 @@ import { MessageContainer } from "../components";
 import { ListOfUsersContainer } from "../components";
 import { Grommet } from "grommet";
 import "./News.css";
-import {CreateMessageContainer} from "../components/create-messages"
+import { CreateMessageContainer } from "../components/create-messages";
 
 import { grommet } from "grommet/themes";
 
@@ -15,10 +15,10 @@ export const NewsScreen = (props) => {
       <MenuContainer />
       <div className="newsFeed">
         <div className="messages">
-            <CreateMessageContainer/>
-            <MessageContainer profile={username}/>
+          <CreateMessageContainer />
+          <MessageContainer profile={username} />
         </div>
-        <div className="userList">
+        <div className="userList" style={{ maxWidth: "330px" }}>
           <ListOfUsersContainer />
         </div>
       </div>

@@ -4,7 +4,6 @@ import LikeImg from "../images/likeCandy.png";
 import DislikeImg from "../images/dislikeCandy.png";
 import "./Messages.css";
 
-
 import { Avatar, Box, Button, Grommet, InfiniteScroll } from "grommet";
 import { grommet } from "grommet/themes";
 import { Link } from "react-router-dom";
@@ -12,6 +11,7 @@ import { useState } from "react";
 import { Dislike, Close } from "grommet-icons";
 
 export const Messages = (props) => {
+  console.log(props);
   const [numberOfMessagesDisplayed, setNumberOfMessagesDisplayed] = useState(
     100
   );
@@ -44,7 +44,7 @@ export const Messages = (props) => {
         className="messagesList"
         style={{ maxWidth: "610px", marginTop: "30px" }}
       >
-        <h3 className="candyFeed" >Candy Feed</h3>
+        <h3 className="candyFeed">Candy Feed</h3>
         {props.messsages !== [] && (
           <InfiniteScroll
             items={props.messages}
@@ -60,6 +60,7 @@ export const Messages = (props) => {
               >
                 <Box justify="between" direction="row-responsive">
                   <Avatar
+                    style={{ width: "75px", height: "75px" }}
                     onError={BlankProfile}
                     className="AvatarImg"
                     src={
@@ -74,19 +75,27 @@ export const Messages = (props) => {
                   />
 
                   <Link
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", marginLeft: "-250px" }}
                     to={`/profiles/${item.username}/profile`}
                   >
                     {item.username}
                   </Link>
-
-                  <Button
-                    justify="end"
-                    onClick={() => deleteMessageHandler(item.id)}
-                    icon={<Close size="small" color="red" />}
-                    secondary
-                    style={{ marginTop: "-40px", marginRight: "-15px" }}
-                  />
+                  {item.username === props.profile ? (
+                    <Button
+                      justify="end"
+                      onClick={() => deleteMessageHandler(item.id)}
+                      icon={<Close size="small" color="red" />}
+                      secondary
+                      style={{ marginTop: "-60px", marginRight: "-15px" }}
+                    />
+                  ) : (
+                    <Button
+                      justify="end"
+                      icon={<Close size="small" color="white" />}
+                      secondary
+                      style={{ marginTop: "-60px", marginRight: "-15px" }}
+                    />
+                  )}
                 </Box>
                 <div className="messageContent" style={{ maxWidth: "500px" }}>
                   <div className="textItem" style={{ marginLeft: "26px" }}>
