@@ -43,6 +43,7 @@ export const ListOfUsers = (props) => {
                     }
                   />
                   <Link
+                    style={{ textDecoration: "none" }}
                     key={user.username + Math.random()}
                     to={`/profiles/${user.username}`}
                   >
