@@ -104,7 +104,7 @@ export const Messages = (props) => {
                     ) ? (
                       <Button
                         margin="0 20px 20px 20px"
-                        icon={<Avatar src={LikeImg} round="small" />}
+                        icon={<Avatar src={DislikeImg} round="small" />}
                         onClick={() => props.addLike({ messageId: item.id })}
                         primary
                         color="white"
@@ -113,7 +113,7 @@ export const Messages = (props) => {
                       <Button
                         margin="0 20px 20px 20px"
                         size="small"
-                        icon={<Avatar src={DislikeImg} round="small" />}
+                        icon={<Avatar src={LikeImg} round="small" />}
                         onClick={() => removeLikeHandler(item.id)}
                         primary
                         color="white"
