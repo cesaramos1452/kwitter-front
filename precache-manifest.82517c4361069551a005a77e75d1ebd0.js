@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a846802ec2a9dfbf99357dce2c9df35",
+    "revision": "fe54aef4de4322b696975ce9610e1cc2",
     "url": "/kwitter-frontend/index.html"
   },
   {
-    "revision": "6dc011a78b3f2614eecc",
+    "revision": "4a6bc0f236d9c76cd43d",
     "url": "/kwitter-frontend/static/css/main.2d1b6a8f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6dc011a78b3f2614eecc",
-    "url": "/kwitter-frontend/static/js/main.30a72fed.chunk.js"
+    "revision": "4a6bc0f236d9c76cd43d",
+    "url": "/kwitter-frontend/static/js/main.86409406.chunk.js"
   },
   {
     "revision": "9d3df622bc47b28f04db",
