@@ -36,7 +36,7 @@ export const Navigation = () => (
         redirectIfAuthenticated
         component={HomeScreen}
       />
-      <ConnectedRoute path="*" component={NotFoundScreen} />
+//       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
 );
