@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kwitter-frontend/precache-manifest.568ab5699436734bcfaf3ce5a1db6e1e.js"
+  "/kwitter-frontend/precache-manifest.1a97ca16a8e517b4cb91384318e35acc.js"
 );
 
 self.addEventListener('message', (event) => {
