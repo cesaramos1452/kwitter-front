@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/kwitter-frontend/static/css/main.2d1b6a8f.chunk.css",
+    "main.js": "/kwitter-frontend/static/js/main.30a72fed.chunk.js",
+    "main.js.map": "/kwitter-frontend/static/js/main.30a72fed.chunk.js.map",
+    "runtime-main.js": "/kwitter-frontend/static/js/runtime-main.14d0a5c8.js",
+    "runtime-main.js.map": "/kwitter-frontend/static/js/runtime-main.14d0a5c8.js.map",
+    "static/js/2.6ce1236a.chunk.js": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js",
+    "static/js/2.6ce1236a.chunk.js.map": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js.map",
+    "index.html": "/kwitter-frontend/index.html",
+    "precache-manifest.1a97ca16a8e517b4cb91384318e35acc.js": "/kwitter-frontend/precache-manifest.1a97ca16a8e517b4cb91384318e35acc.js",
+    "service-worker.js": "/kwitter-frontend/service-worker.js",
+    "static/css/main.2d1b6a8f.chunk.css.map": "/kwitter-frontend/static/css/main.2d1b6a8f.chunk.css.map",
+    "static/js/2.6ce1236a.chunk.js.LICENSE.txt": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js.LICENSE.txt",
+    "static/media/candyBear.png": "/kwitter-frontend/static/media/candyBear.917639f2.png",
+    "static/media/dislikeCandy.png": "/kwitter-frontend/static/media/dislikeCandy.6a423181.png",
+    "static/media/likeCandy.png": "/kwitter-frontend/static/media/likeCandy.39e166a6.png",
+    "static/media/logo.png": "/kwitter-frontend/static/media/logo.88ade123.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.14d0a5c8.js",
+    "static/js/2.6ce1236a.chunk.js",
+    "static/css/main.2d1b6a8f.chunk.css",
+    "static/js/main.30a72fed.chunk.js"
+  ]
+}
