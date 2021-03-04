@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/signup/static/css/main.2d1b6a8f.chunk.css",
-    "main.js": "/signup/static/js/main.64e24bb7.chunk.js",
-    "main.js.map": "/signup/static/js/main.64e24bb7.chunk.js.map",
-    "runtime-main.js": "/signup/static/js/runtime-main.1586c0ce.js",
-    "runtime-main.js.map": "/signup/static/js/runtime-main.1586c0ce.js.map",
-    "static/js/2.dd6e2761.chunk.js": "/signup/static/js/2.dd6e2761.chunk.js",
-    "static/js/2.dd6e2761.chunk.js.map": "/signup/static/js/2.dd6e2761.chunk.js.map",
-    "index.html": "/signup/index.html",
-    "precache-manifest.e7b6ced8c7f52a32fcb174f40e7886fc.js": "/signup/precache-manifest.e7b6ced8c7f52a32fcb174f40e7886fc.js",
-    "service-worker.js": "/signup/service-worker.js",
-    "static/css/main.2d1b6a8f.chunk.css.map": "/signup/static/css/main.2d1b6a8f.chunk.css.map",
-    "static/js/2.dd6e2761.chunk.js.LICENSE.txt": "/signup/static/js/2.dd6e2761.chunk.js.LICENSE.txt",
-    "static/media/candyBear.png": "/signup/static/media/candyBear.917639f2.png",
-    "static/media/dislikeCandy.png": "/signup/static/media/dislikeCandy.6a423181.png",
-    "static/media/likeCandy.png": "/signup/static/media/likeCandy.39e166a6.png",
-    "static/media/logo.png": "/signup/static/media/logo.88ade123.png"
+    "main.css": "/kwitter-frontend/static/css/main.2d1b6a8f.chunk.css",
+    "main.js": "/kwitter-frontend/static/js/main.be9c710f.chunk.js",
+    "main.js.map": "/kwitter-frontend/static/js/main.be9c710f.chunk.js.map",
+    "runtime-main.js": "/kwitter-frontend/static/js/runtime-main.14d0a5c8.js",
+    "runtime-main.js.map": "/kwitter-frontend/static/js/runtime-main.14d0a5c8.js.map",
+    "static/js/2.6ce1236a.chunk.js": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js",
+    "static/js/2.6ce1236a.chunk.js.map": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js.map",
+    "index.html": "/kwitter-frontend/index.html",
+    "precache-manifest.568ab5699436734bcfaf3ce5a1db6e1e.js": "/kwitter-frontend/precache-manifest.568ab5699436734bcfaf3ce5a1db6e1e.js",
+    "service-worker.js": "/kwitter-frontend/service-worker.js",
+    "static/css/main.2d1b6a8f.chunk.css.map": "/kwitter-frontend/static/css/main.2d1b6a8f.chunk.css.map",
+    "static/js/2.6ce1236a.chunk.js.LICENSE.txt": "/kwitter-frontend/static/js/2.6ce1236a.chunk.js.LICENSE.txt",
+    "static/media/candyBear.png": "/kwitter-frontend/static/media/candyBear.917639f2.png",
+    "static/media/dislikeCandy.png": "/kwitter-frontend/static/media/dislikeCandy.6a423181.png",
+    "static/media/likeCandy.png": "/kwitter-frontend/static/media/likeCandy.39e166a6.png",
+    "static/media/logo.png": "/kwitter-frontend/static/media/logo.88ade123.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1586c0ce.js",
-    "static/js/2.dd6e2761.chunk.js",
+    "static/js/runtime-main.14d0a5c8.js",
+    "static/js/2.6ce1236a.chunk.js",
     "static/css/main.2d1b6a8f.chunk.css",
-    "static/js/main.64e24bb7.chunk.js"
+    "static/js/main.be9c710f.chunk.js"
   ]
 }
